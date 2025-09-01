@@ -1,0 +1,43 @@
+@import url("../css/header.css");
+@import url("../css/footer.css");
+
+.moodboard {
+  border-radius: 10px;
+  width: fit-content;
+  background-color: rgb(244, 170, 180);
+}
+
+.moodboard:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+body {
+  background-image: url("https://i.pinimg.com/736x/18/59/10/185910553644f1785972c67000a65f62.jpg");
+}
+@media (max-width: 500px) {
+  body {
+    background-size: contain;
+  }
+  .moodboard {
+    font-size: 30px;
+  }
+  .manifestacion-container {
+    font-size: 15px;
+  }
+  .manifestacion-container h1 {
+    font-size: 19px;
+  }
+
+  #carouselExampleIndicators img {
+    width: 50%;
+  }
+}
+
+.manifestacion-container {
+  background: #fff0f5;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mood {
+  width: 60%;
+}

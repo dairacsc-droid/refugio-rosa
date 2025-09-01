@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair:ital,opsz@0,5..1200;1,5..1200&family=Satisfy&display=swap");
+#history {
+  font-family: Georgia, "Times New Roman";
+  color: #c35c6a;
+  margin: 0;
+  padding: 0;
+}
+
+.intro {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #d3abb8;
+  color: #333;
+  background-color: #f8b9ca;
+  padding: 2rem;
+  text-align: center;
+}
+
+.intro h2 {
+  color: #c2185b;
+  font-size: 2rem;
+}
+
+.tarjetas {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+  background-color: #de82a7;
+}
+
+.tarjeta {
+  background-color: #fff;
+  border: 1px solid #f8bbd0;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 250px;
+  text-align: center;
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 290px;
+  border-radius: 6px;
+}
+
+.tarjeta h4 {
+  color: #d81b60;
+  margin: 0.5rem 0;
+}
+
+.tarjeta .autor {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.tarjeta a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #c2185b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.phrase {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.blog {
+  margin: 20px;
+}
+.blog img {
+  width: 50%;
+  border-radius: 8px;
+}
+
+.blog h3 {
+  color: #d81b60;
+}
+
+.blog .autor {
+  font-size: 0.9rem;
+  color: #888;
+}

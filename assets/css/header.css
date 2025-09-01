@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,773&display=swap");
+/*fuente del título*/
+@import url("https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&display=swap");
+/*Fuente del slogan*/
+
+body {
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+  background-color: #fff0f5;
+  color: #3d3638;
+}
+
+.navegacion {
+  position: relative;
+  background: radial-gradient(#f8c5db, #ff5aa4);
+  padding: 20px;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.lazo1,
+.lazo2,
+.lazo3,
+.lazo4 {
+  opacity: 0.4;
+  position: absolute;
+  z-index: 0;
+}
+
+.lazo1 {
+  top: 0;
+  left: 20px;
+  width: 150px;
+  transform: rotate(-10deg);
+}
+
+.lazo2 {
+  top: 10%;
+  left: 50%;
+  transform: rotate(20deg);
+  width: 120px;
+}
+
+.lazo3 {
+  top: 1px;
+  right: 10px;
+  width: 150px;
+  transform: rotate(13deg);
+}
+
+.lazo4 {
+  bottom: 1px;
+  right: 200px;
+  transform: rotate(-12deg);
+}
+
+.titulo {
+  margin: 0;
+  font-size: 45px;
+  font-family: Fraunces, Arial;
+  position: relative;
+  z-index: 1;
+}
+
+.slogan {
+  font-size: 25px;
+  margin-top: 5px;
+  font-family: Lusitana;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Barra de navegación adaptable --- */
+.barradenav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #ffe4e1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px;
+}
+
+.barradenav a {
+  text-decoration: none;
+  color: #5c4b51;
+  font-weight: bold;
+}
+
+.barradenav a:hover {
+  color: #b32789;
+  text-shadow: 5px 3px 50px red;
+}
+
+.logo {
+  width: 210px;
+  height: 90px;
+  object-fit: contain; /* Mantiene proporciones sin deformar */
+  display: block;
+}
+
+/* Ocultar checkbox */
+#menu {
+  display: none;
+}
+
+/* Icono menú */
+.hamburguesa {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* --- Adaptación móvil --- */
+@media (max-width: 500px) {
+  .hamburguesa {
+    display: block;
+    order: -1;
+  }
+
+  .barradenav a {
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+    background: #ffe4e1;
+  }
+
+  #menu:checked ~ a {
+    display: block;
+  }
+
+  .lazo1,
+  .lazo2,
+  .lazo3,
+  .lazo4 {
+    width: 65px;
+    opacity: 0.3;
+  }
+
+  .lazo1 {
+    top: 0;
+    left: 5px;
+    transform: rotate(10deg);
+  }
+
+  .lazo2 {
+    width: 60px;
+    top: 100px;
+    left: 270px;
+    transform: rotate(9deg);
+  }
+
+  .lazo4 {
+    top: 95px;
+    left: 60px;
+  }
+
+  .titulo {
+    font-size: 30px;
+  }
+
+  .slogan {
+    font-size: 20px;
+  }
+}
+
+/* Adaptacion de tablet */
+@media (min-width: 700px) {
+  .lazo1,
+  .lazo3 {
+    width: 90px;
+    opacity: 0.3;
+  }
+
+  .lazo2,
+  .lazo4 {
+    width: 90px;
+    top: 100px;
+    opacity: 0.3;
+  }
+
+  .lazo2 {
+    left: 200px;
+  }
+}
+/*adaptacion computadora*/
+@media (min-width: 900px) {
+  .lazo1,
+  .lazo3 {
+    width: 130px;
+  }
+  .lazo2,
+  .lazo4 {
+    width: 150px;
+    top: 70px;
+  }
+}
