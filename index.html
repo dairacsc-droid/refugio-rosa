@@ -1,196 +1,252 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Refugio Rosa</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/header.css" />
+    <link rel="stylesheet" href="./assets/css/footer.css" />
+  </head>
 
-  <title>Mi Refugio Rosa</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="./assets/css/index.css" />
-  <link rel="stylesheet" href="./assets/css/header.css" />
-  <link rel="stylesheet" href="./assets/css/footer.css" />
-</head>
+  <body>
+    <header class="navegacion">
+      <div class="lazos">
+        <img
+          class="lazo1"
+          src="https://i.postimg.cc/6QfkvLQN/9c27d61f92ggrtyu56et4561.png"
+          alt="lazo"
+        />
+        <img
+          class="lazo2"
+          src="https://i.postimg.cc/6QfkvLQN/9c27d61f92ggrtyu56et4561.png"
+          alt="lazo2"
+        />
+        <img
+          class="lazo3"
+          src="https://i.postimg.cc/6QfkvLQN/9c27d61f92ggrtyu56et4561.png"
+          alt="lazo3"
+        />
+        <img
+          class="lazo4"
+          src="https://i.postimg.cc/6QfkvLQN/9c27d61f92ggrtyu56et4561.png"
+          alt="lazo4"
+        />
+        <h1 class="titulo">Mi Refugio Rosa</h1>
+        <p class="slogan">
+          Un espacio para soñar, crecer y brillar como tú mereces.
+        </p>
+      </div>
+    </header>
 
-<body>
-  <header class="navegacion">
-    <div class="lazos">
-      <img class="lazo1" src="https://i.postimg.cc/6QfkvLQN/9c27d61f92ggrtyu56et4561.png" alt="lazo" />
-      <img class="lazo2" src="https://i.postimg.cc/6QfkvLQN/9c27d61f92ggrtyu56et4561.png" alt="lazo2" />
-      <img class="lazo3" src="https://i.postimg.cc/6QfkvLQN/9c27d61f92ggrtyu56et4561.png" alt="lazo3" />
-      <img class="lazo4" src="https://i.postimg.cc/6QfkvLQN/9c27d61f92ggrtyu56et4561.png" alt="lazo4" />
-      <h1 class="titulo">Mi Refugio Rosa</h1>
-      <p class="slogan">
-        Un espacio para soñar, crecer y brillar como tú mereces.
-      </p>
-    </div>
-  </header>
+    <main>
+      <!-- Barra de navegación adaptable -->
+      <nav class="barradenav">
+        <input type="checkbox" id="menu" />
+        <label for="menu" class="hamburguesa">☰</label>
 
-  <main>
-    <!-- Barra de navegación adaptable -->
-    <nav class="barradenav">
-      <input type="checkbox" id="menu" />
-      <label for="menu" class="hamburguesa">☰</label>
+        <!-- Enlaces -->
+        <a href="../../index.html">Inicio</a>
+        <a href="./assets/html/somos.html">¿Quiénes somos?</a>
+        <a href="./assets/html/autocuidado.html">Autocuidado</a>
+        <a href="./assets/html/moodboard.html">Moodboard</a>
+        <a href="./assets/html/playlist.html">Playlist emocional</a>
+        <a href="./assets/html/historias.html">Historias</a>
+      </nav>
 
-      <!-- Enlaces -->
-      <a href="../../index.html">Inicio</a>
-      <a href="./assets/html/somos.html">¿Quiénes somos?</a>
-      <a href="./assets/html/autocuidado.html">Autocuidado</a>
-      <a href="./assets/html/moodboard.html">Moodboard</a>
-      <a href="./assets/html/playlist.html">Playlist emocional</a>
-      <a href="./assets/html/historias.html">Historias</a>
-    </nav>
+      <section class="objetivo">
+        <div class="container-1 p-5">
+          <div class="row justify-content-center">
+            <div class="col-lg-9">
+              <h2 class="bien text-center mb-4">Bienvenidas a Refugio Rosa</h2>
+              <div class="grupo w-50 mx-auto mb-3">
+                <img
+                  src="./assets/img/grupo.jpg"
+                  alt="grupo "
+                  class="img-fluid"
+                />
+              </div>
+              <p class="text-white lead text-center mb-4">
+                Nuestra página es un espacio creado especialmente para chicas,
+                donde cuidarte y sentirte inspirada es lo más importante.
+                Encontrarás secciones de autocuidado con tips y rutinas para
+                mimarte, una playlist con música que te acompaña en cada
+                momento, un moodboard lleno de imágenes y colores para inspirar
+                tu creatividad, y historias que inspiran para recordarte que tus
+                sueños son posibles.
+              </p>
 
-    <section class="objetivo">
-      <div class="container-1 p-5">
-        <div class="row justify-content-center">
-          <div class="col-lg-9">
-            <h2 class="bien text-center mb-4">
-              Bienvenidas a Refugio Rosa
-            </h2>
-            <div class="grupo w-50 mx-auto mb-3">
-              <img src="./assets/img/grupo.jpg" alt="grupo " class="img-fluid" />
+              <div class="row g-3 g-md-4">
+                <div class="col-md-6">
+                  <div
+                    class="d-flex gap-3 align-items-start p-3 rounded-3 bg-white bg-opacity-70 shadow-sm"
+                  >
+                    <div>
+                      <h6 class="mb-1">✦ Espacio para desahogarse</h6>
+                      <p class="mb-0 small">
+                        Expresar lo que sentimos, lo bueno, lo malo, lo raro,
+                        todo vale.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div
+                    class="d-flex gap-3 align-items-start p-3 rounded-3 bg-white bg-opacity-70 shadow-sm"
+                  >
+                    <div>
+                      <h6 class="mb-1">✦ Conectar de verdad</h6>
+                      <p class="mb-0 small">
+                        Aquí puedes hacer amigas que te entiendan sin juzgarte.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div
+                    class="d-flex gap-3 align-items-start p-3 rounded-3 bg-white bg-opacity-70 shadow-sm"
+                  >
+                    <div>
+                      <h6 class="mb-1">✦ Tips para todas</h6>
+                      <p class="mb-0 small">
+                        Consejitos sobre estudio, autocuidado, paz mental y más.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div
+                    class="d-flex gap-3 align-items-start p-3 rounded-3 bg-white bg-opacity-70 shadow-sm"
+                  >
+                    <div>
+                      <h6 class="mb-1">✦ Crecemos juntas</h6>
+                      <p class="mb-0 small">
+                        porque un día malo no define quién eres, y aquí siempre
+                        habrá alguien que te lo recuerde.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <p class="text-white lead text-center mb-4">
-              Nuestra página es un espacio creado especialmente para chicas,
-              donde cuidarte y sentirte inspirada es lo más importante.
-              Encontrarás secciones de autocuidado con tips y rutinas para
-              mimarte, una playlist con música que te acompaña en cada
-              momento, un moodboard lleno de imágenes y colores para inspirar
-              tu creatividad, y historias que inspiran para recordarte que tus
-              sueños son posibles.
+          </div>
+        </div>
+      </section>
+
+      <!-- Visión & Misión -->
+      <section class="vision-mision py-5">
+        <div class="container">
+          <div class="text-center mb-4">
+            <h2 class="fw-bold">Visión & Misión</h2>
+            <p class="text-muted mb-0">
+              Un refugio digital hecho por y para chicas
             </p>
+          </div>
 
-            <div class="row g-3 g-md-4">
-              <div class="col-md-6">
-                <div class="d-flex gap-3 align-items-start p-3 rounded-3 bg-white bg-opacity-70 shadow-sm">
-                  <div>
-                    <h6 class="mb-1">✦ Espacio para desahogarse</h6>
-                    <p class="mb-0 small">
-                      Expresar lo que sentimos, lo bueno, lo malo, lo raro,
-                      todo vale.
-                    </p>
+          <div class="row g-4">
+            <div class="col-12 col-lg-6">
+              <div class="card border-0 shadow-sm rounded-4 h-100">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <h3 class="h5 fw-bold mb-0">🌸 Visión</h3>
                   </div>
+                  <p class="mb-0">
+                    Queremos construir un espacio digital donde cada chica pueda
+                    sentirse segura, escuchada y acompañada. Soñamos con una
+                    comunidad que inspire confianza y empatía, donde compartir
+                    emociones, ideas y experiencias sea natural, y donde el
+                    apoyo mutuo nos recuerde que juntas podemos crecer, aprender
+                    y brillar sin miedo a ser quienes somos.
+                  </p>
                 </div>
               </div>
+            </div>
 
-              <div class="col-md-6">
-                <div class="d-flex gap-3 align-items-start p-3 rounded-3 bg-white bg-opacity-70 shadow-sm">
-                  <div>
-                    <h6 class="mb-1">✦ Conectar de verdad</h6>
-                    <p class="mb-0 small">
-                      Aquí puedes hacer amigas que te entiendan sin juzgarte.
-                    </p>
+            <div class="col-12 col-lg-6">
+              <div class="card border-0 shadow-sm rounded-4 h-100">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <h3 class="h5 fw-bold mb-0">💡Misión</h3>
                   </div>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="d-flex gap-3 align-items-start p-3 rounded-3 bg-white bg-opacity-70 shadow-sm">
-                  <div>
-                    <h6 class="mb-1">✦ Tips para todas</h6>
-                    <p class="mb-0 small">
-                      Consejitos sobre estudio, autocuidado, paz mental y más.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="d-flex gap-3 align-items-start p-3 rounded-3 bg-white bg-opacity-70 shadow-sm">
-                  <div>
-                    <h6 class="mb-1">✦ Crecemos juntas</h6>
-                    <p class="mb-0 small">
-                      porque un día malo no define quién eres, y aquí siempre
-                      habrá alguien que te lo recuerde.
-                    </p>
-                  </div>
+                  <p class="mb-0">
+                    Nuestra misión es ofrecer un lugar cercano y accesible,
+                    pensado para adolescentes y jóvenes que buscan un refugio en
+                    medio del día a día. Aquí podrás desahogarte, encontrar tips
+                    de autocuidado, descubrir historias motivadoras y conectar
+                    con otras chicas que te entienden. Queremos recordarte que
+                    no estás sola, que tu voz importa y que siempre habrá
+                    alguien dispuesto a escucharte y acompañarte en tu camino.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
+      <br />
+      <div>
+        <h2>Únete</h2>
+        <p>
+          ¿Quieres ser parte de nuestra comunidad? En Refugio Rosa crecemos
+          juntas, únete a tu lugar seguro
+        </p>
+        <form>
+          <label for="nombre">Nombre:</label><br />
+          <input type="text" id="nombre" name="nombre" required /><br /><br />
+
+          <label for="email">Correo electrónico:</label><br />
+          <input type="email" id="email" name="email" required /><br /><br />
+
+          <label for="mensaje">Mensaje:</label><br />
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea
+          ><br /><br />
+
+          <button type="submit">Enviar</button>
+        </form>
       </div>
-    </section>
+    </main>
+    <footer>
+      <div class="social">
+        <a href="#">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="#">
+          <i class="fab fa-instagram"></i>
+        </a>
 
-
-
-    <!-- Visión & Misión -->
-    <section class="vision-mision py-5">
-      <div class="container">
-        <div class="text-center mb-4">
-          <h2 class="fw-bold">Visión & Misión</h2>
-          <p class="text-muted mb-0">Un refugio digital hecho por y para chicas</p>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-12 col-lg-6">
-            <div class="card border-0 shadow-sm rounded-4 h-100">
-              <div class="card-body p-4">
-                <div class="d-flex align-items-center gap-2 mb-2">
-                  <h3 class="h5 fw-bold mb-0">🌸 Visión</h3>
-                </div>
-                <p class="mb-0">
-                  Queremos construir un espacio digital donde cada chica pueda sentirse segura,
-                  escuchada y acompañada. Soñamos con una comunidad que inspire confianza y empatía,
-                  donde compartir emociones, ideas y experiencias sea natural, y donde el apoyo mutuo
-                  nos recuerde que juntas podemos crecer, aprender y brillar sin miedo a ser quienes somos.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-lg-6">
-            <div class="card border-0 shadow-sm rounded-4 h-100">
-              <div class="card-body p-4">
-                <div class="d-flex align-items-center gap-2 mb-2">
-                  <h3 class="h5 fw-bold mb-0">💡Misión</h3>
-                </div>
-                <p class="mb-0">
-                  Nuestra misión es ofrecer un lugar cercano y accesible, pensado para adolescentes y
-                  jóvenes que buscan un refugio en medio del día a día. Aquí podrás desahogarte,
-                  encontrar tips de autocuidado, descubrir historias motivadoras y conectar con otras chicas
-                  que te entienden. Queremos recordarte que no estás sola, que tu voz importa y que siempre
-                  habrá alguien dispuesto a escucharte y acompañarte en tu camino.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <a href="#">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="#"><i class="fab fa-pinterest"></i> </a>
       </div>
-    </section>
-
-  </main>
-  <footer>
-    <div class="social">
-      <a href="#">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="#">
-        <i class="fab fa-instagram"></i>
-      </a>
-
-      <a href="#">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="#"><i class="fab fa-pinterest"></i>
-      </a>
-    </div>
-    <div class="nav-section">
-      <p>Refugio Rosa: tu rincón para sanar, soñar y brillar. </p>
-      <p>Donde cada historia inspira, y cada emoción importa.</p>
-    </div>
-    <div class="copy">
-      @Refugio rosa|Todos los derechos reservados
-    </div>
-
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-    crossorigin="anonymous"></script>
-</body>
-
+      <div class="nav-section">
+        <p>Refugio Rosa: tu rincón para sanar, soñar y brillar.</p>
+        <p>Donde cada historia inspira, y cada emoción importa.</p>
+      </div>
+      <div class="copy">@Refugio rosa|Todos los derechos reservados</div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
