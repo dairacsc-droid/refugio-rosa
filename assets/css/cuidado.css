@@ -1,10 +1,15 @@
 @import url("../css/header.css");
 @import url("../css/footer.css");
-
+:root {
+  --texto-body: rgb(248, 196, 224);
+}
 body {
-  background-color: rgb(248, 196, 224);
+  background-color: var(--texto-body);
 }
 
+body {
+  background-color: var(--color-body);
+}
 .autocuidado {
   padding-bottom: 30px;
   font-family: Georgia, "Times New Roman", Times, serif;

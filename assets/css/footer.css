@@ -1,8 +1,17 @@
+:root {
+  --color-footer-fondo: rgb(243, 181, 227);
+  --color-social-texto: rgb(255, 194, 237);
+  --color-social-fondo: rgb(216, 122, 200);
+  --color-links: rgb(158, 67, 143);
+  --color-copy-fondo: rgb(233, 157, 216);
+  --color-copy-texto: rgb(131, 49, 131);
+}
+
 main {
   flex: 1;
 }
 footer {
-  background-color: rgb(243, 181, 227);
+  background-color: var(--color-footer-fondo);
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -18,8 +27,8 @@ footer .social {
 }
 
 footer .social a {
-  color: rgb(255, 194, 237);
-  background-color: rgb(216, 122, 200);
+  color: var(--color-social-texto);
+  background-color: var(--color-social-fondo);
   padding: 5px;
   border-radius: 50%;
 }
@@ -39,12 +48,12 @@ footer .nav-section nav {
   gap: 35px;
 }
 footer .nav-section nav a {
-  color: rgb(158, 67, 143);
+  color: var(--color-links);
 }
 .copy {
   padding: 15px 0;
-  background-color: rgb(233, 157, 216);
-  color: rgb(131, 49, 131);
+  background-color: var(--color-copy-fondo);
+  color: var(--color-copy-texto);
 }
 @media (max-width: 430px) {
   .nav-section nav {
