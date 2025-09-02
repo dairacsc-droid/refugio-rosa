@@ -36,16 +36,6 @@
   box-shadow: 0 0 12px 4px rgba(197, 78, 140, 0.6);
 }
 
-input {
-  border: 1px solid #ccc;
-  padding: 8px;
-  border-radius: 4px;
-}
-input:focus {
-  outline: none;
-  border: 2px solid #c54e8c; /* borde rosa al hacer clic */
-}
-
 /* Modo oscuro opcional */
 @media (prefers-color-scheme: dark) {
   .vision-mision {
