@@ -35,6 +35,13 @@
 .boton:hover {
   box-shadow: 0 0 12px 4px rgba(197, 78, 140, 0.6);
 }
+#mensaje:focus,
+#nombre:focus,
+#email:focus {
+  outline: none; /* quita el borde azul por defecto */
+  box-shadow: 0 0 5px 2px rgb(231, 131, 198); /* sombra rosada */
+  border-color: rgb(219, 130, 182); /* cambia también el borde */
+}
 
 /* Modo oscuro opcional */
 @media (prefers-color-scheme: dark) {
