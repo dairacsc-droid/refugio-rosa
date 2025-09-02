@@ -1,10 +1,10 @@
 :root {
-  --color-footer-fondo: rgb(243, 181, 227);
-  --color-social-texto: rgb(255, 194, 237);
-  --color-social-fondo: rgb(216, 122, 200);
-  --color-links: rgb(158, 67, 143);
-  --color-copy-fondo: rgb(233, 157, 216);
-  --color-copy-texto: rgb(131, 49, 131);
+  --color-footer-fondo: rgb(253, 211, 241);
+  --color-social-texto: rgb(247, 228, 241);
+  --color-social-fondo: rgb(248, 155, 212);
+  --color-links: rgb(248, 155, 192);
+  --color-copy-fondo: rgb(247, 172, 213);
+  --color-copy-texto: rgb(68, 64, 65);
 }
 
 main {
@@ -29,8 +29,8 @@ footer .social {
 footer .social a {
   color: var(--color-social-texto);
   background-color: var(--color-social-fondo);
-  padding: 5px;
-  border-radius: 50%;
+  padding: 8px 10px 8px 10px;
+  border-radius: 60%;
 }
 footer .social a i {
   font-size: 20px;
@@ -40,7 +40,7 @@ footer .social a i:hover {
   transform: translateY(-2px);
 }
 footer .nav-section {
-  margin-bottom: 15px;
+  margin-bottom: 100px;
 }
 footer .nav-section nav {
   display: flex;
