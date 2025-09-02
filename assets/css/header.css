@@ -58,7 +58,8 @@ body {
 .titulo {
   margin: 0;
   font-size: 45px;
-  font-family: Fraunces, Arial;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
   position: relative;
   z-index: 1;
 }
