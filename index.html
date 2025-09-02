@@ -210,17 +210,29 @@
           <label for="nombre">Nombre:</label><br />
           <input
             type="text"
-            class="form-control w-50 mx-auto border-2 border-dark"
+            class="form-control w-25 w-md-50 w-lg-25 mx-auto border-2 border-dark"
             id="nombre"
             name="nombre"
             required
           /><br /><br />
 
           <label for="email">Correo electrónico:</label><br />
-          <input type="email" id="email" name="email" required /><br /><br />
+          <input
+            type="email"
+            class="form-control w-25 mx-auto border-2 border-dark"
+            id="email"
+            name="email"
+            required
+          /><br /><br />
 
           <label for="mensaje">Mensaje:</label><br />
-          <textarea id="mensaje" name="mensaje" rows="5" required></textarea
+          <textarea
+            id="mensaje"
+            class="form-control w-25 mx-auto border-2 border-dark w-md-50 w-sm-50"
+            name="mensaje"
+            rows="5"
+            required
+          ></textarea
           ><br /><br />
 
           <button type="submit">Enviar</button>
