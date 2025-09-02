@@ -22,6 +22,29 @@
   background-color: #fff9f9cc;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+.boton {
+  background-color: #c54e8c;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.boton:hover {
+  box-shadow: 0 0 12px 4px rgba(197, 78, 140, 0.6);
+}
+
+input {
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+}
+input:focus {
+  outline: none;
+  border: 2px solid #c54e8c; /* borde rosa al hacer clic */
+}
 
 /* Modo oscuro opcional */
 @media (prefers-color-scheme: dark) {
