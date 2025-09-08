@@ -3,8 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&display=swap");
 /*Fuente del slogan*/
 :root {
-  /* 🎨 Colores principales */
-  --color-body: rgb(241, 212, 212);
+  --color-fondo-body: #fff0f5;
   --color-texto: #3d3638;
   --color-nav-gradiente1: #f8c5db;
   --color-nav-gradiente2: #ff5aa4;
@@ -88,7 +87,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: #ffe4e1;
+  background: var(--color-nav-fondo);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -98,13 +97,13 @@ body {
 
 .barradenav a {
   text-decoration: none;
-  color: #5c4b51;
+  color: var(--color-nav-texto);
   font-weight: bold;
 }
 
 .barradenav a:hover {
-  color: #b32789;
-  text-shadow: 5px 3px 50px red;
+  color: var(--color-nav-hover);
+  text-shadow: 5px 3px 50px var(--color-nav-hover-sombra);
 }
 
 .logo {
@@ -138,7 +137,7 @@ body {
     width: 100%;
     text-align: center;
     padding: 5px 0;
-    background: #ffe4e1;
+    background: var(--color-nav-fondo);
   }
 
   #menu:checked ~ a {

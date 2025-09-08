@@ -1,0 +1,1 @@
+clicker.classList.toggle("p-red");
