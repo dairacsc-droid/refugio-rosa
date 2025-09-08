@@ -1,16 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair:ital,opsz@0,5..1200;1,5..1200&family=Satisfy&display=swap");
+@import url("../css/header.css");
+
+
 #history {
   font-family: Georgia, "Times New Roman";
-  color: #c35c6a;
+  color: #d66e7c;
   margin: 0;
   padding: 0;
 }
 
 .intro {
   font-family: "Segoe UI", sans-serif;
-  background-color: #d3abb8;
   color: #333;
-  background-color: #f8b9ca;
+  background-color: #facfdd;
   padding: 2rem;
   text-align: center;
 }
@@ -26,7 +28,7 @@
   gap: 1rem;
   padding: 2rem;
   flex-wrap: wrap;
-  background-color: #de82a7;
+  background-color: #f6a9c3;
 }
 
 .tarjeta {
