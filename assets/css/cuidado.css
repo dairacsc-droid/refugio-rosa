@@ -2,9 +2,7 @@
 @import url("../css/footer.css");
 :root {
   --texto-body: rgb(248, 196, 224);
-}
-body {
-  background-color: var(--texto-body);
+  --color-body: rgb(241, 212, 212);
 }
 
 body {

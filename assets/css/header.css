@@ -4,7 +4,7 @@
 /*Fuente del slogan*/
 :root {
   /* 🎨 Colores principales */
-  --color-fondo-body: #fff0f5;
+  --color-body: rgb(241, 212, 212);
   --color-texto: #3d3638;
   --color-nav-gradiente1: #f8c5db;
   --color-nav-gradiente2: #ff5aa4;
@@ -17,7 +17,7 @@
 body {
   margin: 0;
   font-family: "Quicksand", sans-serif;
-  background-color: var(--color-fondo-body);
+  background-color: var(--color-body);
   color: var(--color-texto);
 }
 
