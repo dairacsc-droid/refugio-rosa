@@ -4,14 +4,21 @@
 .moodboard {
   border-radius: 10px;
   width: fit-content;
-  background-color: #f0c5d9;
+  background-color: #f6a9c3;
 }
 
 .moodboard:hover {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 body {
-  background-image: url("https://i.pinimg.com/736x/18/59/10/185910553644f1785972c67000a65f62.jpg");
+  background: #facfdd;
+  background: radial-gradient(
+    circle,
+    rgba(250, 207, 221, 1) 10%,
+    rgba(247, 175, 199, 1) 31%,
+    rgba(246, 169, 195, 1) 44%,
+    rgba(255, 251, 251, 1) 92%
+  );
 }
 @media (max-width: 500px) {
   body {
@@ -33,20 +40,11 @@ body {
 }
 
 .manifestacion-container {
-  background: #fff0f5;
+  background: #facfdd;
   max-width: 800px;
   margin: 0 auto;
 }
 
 .mood {
   width: 60%;
-}
-
-:root {
-  /* Colores principales */
-  --color-header: rgb(241, 212, 212);
-}
-
-header {
-  background-color: var(--color-header);
 }

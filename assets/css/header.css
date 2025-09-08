@@ -3,10 +3,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&display=swap");
 /*Fuente del slogan*/
 :root {
-  --color-fondo-body: #fff0f5;
+  --color-fondo-body: #fffbfb;
   --color-texto: #3d3638;
-  --color-nav-gradiente1: #f8c5db;
-  --color-nav-gradiente2: #ff5aa4;
+  --color-nav-gradiente1: #facfdd;
+  --color-nav-gradiente2: #f6a9c3;
   --color-nav-fondo: #ffe4e1;
   --color-nav-texto: #5c4b51;
   --color-nav-hover: #b32789;
@@ -16,13 +16,17 @@
 body {
   margin: 0;
   font-family: "Quicksand", sans-serif;
-  background-color: var(--color-body);
+  background-color: var(--color-fondo-body);
   color: var(--color-texto);
 }
 
 .navegacion {
   position: relative;
-  background: radial-gradient var(--color-nav-gradiente1);
+  background: radial-gradient(
+    circle,
+    var(--color-nav-gradiente1),
+    var(--color-nav-gradiente2)
+  );
   padding: 20px;
   text-align: center;
   overflow: hidden;

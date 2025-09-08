@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair:ital,opsz@0,5..1200;1,5..1200&family=Satisfy&display=swap");
-@import url("../css/header.css");
-
+@import url("./header.css");
 
 #history {
   font-family: Georgia, "Times New Roman";
