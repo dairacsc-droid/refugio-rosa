@@ -1,8 +1,7 @@
 @import url("../css/header.css");
 @import url("../css/footer.css");
 :root {
-  --texto-body: rgb(248, 196, 224);
-  --color-body: rgb(241, 212, 212);
+  --color-body: #facfdd;
 }
 
 body {
@@ -14,7 +13,6 @@ body {
 }
 
 span {
-  background-color: rgb(245, 202, 226);
   padding: 10px;
   border-radius: 10px;
   font-size: 36px;

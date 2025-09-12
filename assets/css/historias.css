@@ -3,21 +3,21 @@
 
 #history {
   font-family: Georgia, "Times New Roman";
-  color: #d66e7c;
+  color: #f16b98;
   margin: 0;
   padding: 0;
 }
 
 .intro {
   font-family: "Segoe UI", sans-serif;
-  color: #333;
+  color: #000000;
   background-color: #facfdd;
   padding: 2rem;
   text-align: center;
 }
 
 .intro h2 {
-  color: #c2185b;
+  color: #ffffff;
   font-size: 2rem;
 }
 
