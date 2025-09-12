@@ -82,3 +82,10 @@
   font-size: 0.9rem;
   color: #888;
 }
+
+@media screen and (min-width: 700px) {
+  .blog {
+    display: flex;
+    height: auto;
+  }
+}
