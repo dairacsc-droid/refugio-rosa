@@ -2,11 +2,11 @@
 @import url("../css/footer.css");
 
 body {
-  background: radial-gradient(#ecc6e9b0 10%, #fa9acb 100%) !important;
+  background: radial-gradient(#ecc6e9b0 10%, #f6a9c3 100%) !important;
 }
 
 .container {
-  background: #f3c5e3;
+  background: #facfdd;
   padding: 35px;
   border-radius: 10px;
 }
