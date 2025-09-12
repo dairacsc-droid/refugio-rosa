@@ -3,9 +3,9 @@
 
 body {
   margin: 0;
-  background-color: #fad3f1;
+  background-color: #f047a9;
   font-family: Georgia, "Times New Roman", Times, serif;
-  color: #a34a67;
+  color: #f83d7b;
 }
 
 .generos {
@@ -34,7 +34,7 @@ h1 {
 }
 
 .carta {
-  background-color: #f3b6df;
+  background-color: #faa3d6;
   border-radius: 15px;
   text-align: center;
   padding: 1.5rem;
@@ -49,7 +49,7 @@ h1 {
 .carta:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  background-color: #f89fc2;
+  background-color: #f7a7c6;
 }
 
 .imagen {
