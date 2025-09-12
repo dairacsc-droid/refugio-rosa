@@ -7,6 +7,14 @@
   background-color: #f6a9c3;
 }
 
+.frase {
+  background-color: #fffbfb;
+  border: #f6a9c3;
+}
+.frase p {
+  font-size: 20px;
+  margin: none;
+}
 .moodboard:hover {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
