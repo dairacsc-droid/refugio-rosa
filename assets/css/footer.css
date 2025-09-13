@@ -39,9 +39,7 @@ footer .social a i {
 footer .social a i:hover {
   transform: translateY(-2px);
 }
-footer .nav-section {
-  margin-bottom: 100px;
-}
+
 footer .nav-section nav {
   display: flex;
   justify-content: center;
