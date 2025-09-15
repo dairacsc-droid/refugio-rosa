@@ -21,10 +21,16 @@ function Mensaje() {
   document.getElementById("encuesta").style.display = "none";
 }
 
+const mensajeError = document.querySelector("#error")
+
+
 Preguntas();
 
 document.getElementById("btnSiguiente").addEventListener("click", function () {
   var valor = document.getElementById("respuesta").value.trim();
+ 
+    mensajeError.textContent = "❌ No pusiste nada"
+  
 
   if (valor === "") {
     alert("Por favor escribe tu respuesta");
@@ -40,7 +46,7 @@ document.getElementById("btnSiguiente").addEventListener("click", function () {
     Mensaje();
   }
 
-let nameInput = getElementById("btnSiguiente").addEventListener
+let nameInput = documentgetElementById( ).addEventListener
 
   if (nameInput == "" || nameInput.length === 0) {
     greetText.innerText = `NO INGRESASTE NADA`;
