@@ -5,7 +5,7 @@ var Questions = [
   "¿Qué edad tienes?",
   "¿De qué país eres?",
   "¿Qué tipo de contenido te gusta compartir o ver? (moda, consejos, estilo de vida, arte, etc.)",
-  "¿Qué esperas encontrar al unirte?",
+  "¿Qué esperas encontrar al unirte?"
 ];
 
 let i = 0;
@@ -14,6 +14,11 @@ let respuestas = [];
 function Preguntas() {
   document.getElementById("pregunta").innerHTML = Questions[i];
   document.getElementById("respuesta").value = "";
+}
+
+function Mensaje() {
+  document.getElementById("mensaje").innerHTML = "Gracias por unirte ";
+  document.getElementById("encuesta").style.display = "none";
 }
 
 Preguntas();
@@ -32,5 +37,6 @@ document.getElementById("btnSiguiente").addEventListener("click", function () {
   if (i < Questions.length) {
     Preguntas(); // muestra la siguiente pregunta
   } else {
+    Mensaje();
   }
 });
