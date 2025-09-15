@@ -33,4 +33,12 @@ document.getElementById("btnSiguiente").addEventListener("click", function () {
     Preguntas(); // muestra la siguiente pregunta
   } else {
   }
+
+let nameInput = getElementById("btnSiguiente").addEventListener
+
+  if (nameInput == "" || nameInput.length === 0) {
+    greetText.innerText = `NO INGRESASTE NADA`;
+  } else {
+    greetText.innerText = `Bienvenida a Refugio Rosa ${nameInput}`;
+  }
 });
