@@ -12,45 +12,65 @@ let i = 0;
 let respuestas = [];
 
 function Preguntas() {
+  const input = document.getElementById("respuesta");
   document.getElementById("pregunta").innerHTML = Questions[i];
-  document.getElementById("respuesta").value = "";
+  input.value = "";
+  if (i === 2) {
+    input.type = "number";
+    input.placeholder = "Escribe tu edad...";
+  } else {
+    input.type = "text";
+    input.placeholder = "Escribe aquí...";
+  }
+
 }
+ 
 
 function Mensaje() {
-  document.getElementById("mensaje").innerHTML = "Gracias por unirte ";
-  document.getElementById("encuesta").style.display = "none";
+  const saludo = respuestas [1];
+  const resultado = document.getElementById("resultado")
+document.getElementById("mensaje").innerHTML = `¡Bienvenida a Refugio Rosa, ${saludo}!`;
+document.getElementById("encuesta").style.display = "none";
+
 }
 
 const mensajeError = document.querySelector("#error")
-
+const mensajeEdad = document.querySelector("#errorEdad")
 
 Preguntas();
 
 document.getElementById("btnSiguiente").addEventListener("click", function () {
   var valor = document.getElementById("respuesta").value.trim();
- 
-    mensajeError.textContent = "❌ No pusiste nada"
-  
 
   if (valor === "") {
-    alert("Por favor escribe tu respuesta");
+    mensajeError.textContent = "❌ No pusiste nada"
     return;
+  } else {
+    mensajeError.textContent = ""
   }
 
+  if (i === 2) {
+    let edad = parseInt(valor);
+    if (isNaN(edad)) {
+      mensajeEdad.textContent = "⚠️ Ingresa un número válido para la edad";
+      return;
+    } else {
+      mensajeEdad.textContent = ""
+    }
+
+    if (edad < 10) {
+      mensajeEdad.textContent = "🚫 Edad no permitida, debes tener al menos 10 años"
+      return;
+    }
+  }
   respuestas.push(valor);
   i++;
-
+ 
+  
   if (i < Questions.length) {
-    Preguntas(); // muestra la siguiente pregunta
+   Preguntas()
   } else {
     Mensaje();
   }
+  });
 
-let nameInput = documentgetElementById( ).addEventListener
-
-  if (nameInput == "" || nameInput.length === 0) {
-    greetText.innerText = `NO INGRESASTE NADA`;
-  } else {
-    greetText.innerText = `Bienvenida a Refugio Rosa ${nameInput}`;
-  }
-});
