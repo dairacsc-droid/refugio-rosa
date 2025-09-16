@@ -54,5 +54,18 @@ body {
 }
 
 .mood {
-  width: 60%;
+  width: 50%;
+}
+
+#carouselExampleIndicators img {
+  object-fit: cover;
+  height: 350px;
+  border-radius: 10px;
+}
+
+/* En pantallas grandes, que ambos tengan la misma altura */
+@media (min-width: 992px) {
+  .row.align-items-center {
+    min-height: 400px;
+  }
 }
