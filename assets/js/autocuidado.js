@@ -7,12 +7,12 @@ let tipsAutocuidado = [
   {
     name: "Mantente saludable",
     description: "Duerme lo suficiente, hidrátate y mueve tu cuerpo día a día.",
-    imgUrl: "blob:https://web.whatsapp.com/b6bdee6e-4104-4f83-9124-25d8274d95dc"
+    imgUrl: "../img/grupo.jpg  "
   },
   {
     name: "Expresa tu creatividad",
     description: "Dibuja, pinta o cocina algo nuevo sin buscar que sea perfecto.",
-    imgUrl: "blob:https://web.whatsapp.com/0d647603-48d5-4d5c-91d6-3aef21a1bc5d"
+    imgUrl: "https://web.whatsapp.com/0d647603-48d5-4d5c-91d6-3aef21a1bc5d"
   },
   {
     name: "Engríete",
