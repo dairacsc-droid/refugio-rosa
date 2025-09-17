@@ -2,7 +2,7 @@ let tipsAutocuidado = [
   {
     name: "Cuida tu mente",
     description: "Escribe lo que sientes, haz pausas de redes y date permiso de descansar.",
-    imgUrl: "blob:https://web.whatsapp.com/e0129cd7-1dd3-4248-a642-3ebb67817a0d"
+imgUrl: 
   },
   {
     name: "Mantente saludable",
@@ -22,12 +22,12 @@ let tipsAutocuidado = [
   {
     name: "Desconéctate un rato",
     description: "Apaga el celular una hora y disfruta el momento presente.",
-    imgUrl: "blob:https://web.whatsapp.com/c2b17c16-d275-451c-bcbb-c3f1aefa4488"
+    imgUrl: "../img/apagaelcel.jpeg"
   },
   {
     name: "Rutina de amor propio",
     description: "Cuida tu piel, ponte tu perfume favorito o arréglate solo para ti.",
-    imgUrl: "blob:https://web.whatsapp.com/638569ab-ccf9-460d-bbe2-28d4f12f819b"
+    imgUrl: "../img/rutina.jpeg"
   },
   {
     name: "Lee algo que te inspire",
