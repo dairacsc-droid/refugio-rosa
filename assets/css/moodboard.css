@@ -4,7 +4,14 @@
   font-family: "LostaMasta-Light";
   src: url("fonts/LostaMasta-Light.otf") format("opentype");
 }
-
+@font-face {
+  font-family: "marigny-medium-italic";
+  src: url("fonts/marigny-medium-italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "marigny-thin";
+  src: url("fonts/marigny-thin.ttf") format("truetype");
+}
 .moodboard {
   border-radius: 10px;
   width: fit-content;
@@ -16,7 +23,7 @@
   border: #f6a9c3 solid 2px;
   width: fit-content;
   padding: 8px;
-  font-family: "LostaMasta-Light";
+  font-family: "marigny-medium-italic";
 }
 .frase p {
   font-size: 20px;
@@ -70,7 +77,6 @@ body {
   border-radius: 10px;
 }
 
-/* En pantallas grandes, que ambos tengan la misma altura */
 @media (min-width: 992px) {
   .row.align-items-center {
     min-height: 400px;

@@ -6,6 +6,14 @@
   font-family: "LostaMasta-Light";
   src: url("fonts/LostaMasta-Light.otf") format("opentype");
 }
+@font-face {
+  font-family: "marigny-medium-italic";
+  src: url("fonts/marigny-medium-italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "marigny-thin";
+  src: url("fonts/marigny-thin.ttf") format("truetype");
+}
 :root {
   --color-fondo-body: #fffbfb;
   --color-texto: #3d3638;
