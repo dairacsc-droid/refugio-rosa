@@ -13,5 +13,9 @@ span {
   padding: 10px;
   border-radius: 10px;
   font-size: 36px;
+
   color: #a34a67;
+}
+img {
+  border-radius: none;
 }

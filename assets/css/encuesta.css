@@ -39,7 +39,7 @@ h1 {
   padding: 0.7rem;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 4px;
 }
 
 button {
@@ -66,4 +66,12 @@ button:hover {
 
 .oculto {
   display: none;
+}
+#error {
+  text-align: start;
+  margin-bottom: 5px;
+}
+#errorEdad {
+  text-align: start;
+  margin-bottom: 5px;
 }
