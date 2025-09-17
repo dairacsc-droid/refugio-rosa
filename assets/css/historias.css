@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair:ital,opsz@0,5..1200;1,5..1200&family=Satisfy&display=swap");
 @import url("./header.css");
-
+@font-face {
+  font-family: "LostaMasta-Light";
+  src: url("fonts/LostaMasta-Light.otf") format("opentype");
+}
 #history {
   font-family: Georgia, "Times New Roman";
   color: #f16b98;

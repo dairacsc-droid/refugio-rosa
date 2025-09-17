@@ -3,7 +3,10 @@
   margin: 0;
   padding: 0;
 }
-
+@font-face {
+  font-family: "LostaMasta-Light";
+  src: url("fonts/LostaMasta-Light.otf") format("opentype");
+}
 body {
   font-family: Arial, sans-serif;
   background: radial-gradient(#fab3da, #fdd5ec);

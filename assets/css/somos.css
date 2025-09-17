@@ -1,6 +1,9 @@
 @import url("../css/header.css");
 @import url("../css/footer.css");
-
+@font-face {
+  font-family: "LostaMasta-Light";
+  src: url("fonts/LostaMasta-Light.otf") format("opentype");
+}
 body {
   background: radial-gradient(#ecc6e9b0 10%, #f6a9c3 100%) !important;
 }
