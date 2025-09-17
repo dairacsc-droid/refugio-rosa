@@ -1,6 +1,9 @@
 @import url("../css/header.css");
 @import url("../css/footer.css");
-
+@font-face {
+  font-family: "LostaMasta-Light";
+  src: url("fonts/LostaMasta-Light.otf") format("opentype");
+}
 body {
   margin: 0;
   background-color: #f047a9;
@@ -13,7 +16,7 @@ body {
   text-align: center;
   color: rgb(172, 53, 118);
   padding: 2rem 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);   
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {

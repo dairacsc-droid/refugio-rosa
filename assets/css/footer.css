@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "LostaMasta-Light";
+  src: url("fonts/LostaMasta-Light.otf") format("opentype");
+}
 :root {
   --color-footer-fondo: rgb(253, 211, 241);
   --color-social-texto: rgb(247, 228, 241);

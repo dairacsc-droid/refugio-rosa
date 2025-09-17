@@ -2,6 +2,10 @@
 /*fuente del título*/
 @import url("https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&display=swap");
 /*Fuente del slogan*/
+@font-face {
+  font-family: "LostaMasta-Light";
+  src: url("fonts/LostaMasta-Light.otf") format("opentype");
+}
 :root {
   --color-fondo-body: #fffbfb;
   --color-texto: #3d3638;

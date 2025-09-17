@@ -1,2 +1,6 @@
 @import url("../css/header.css");
 @import url("../css/footer.css");
+@font-face {
+  font-family: "LostaMasta-Light";
+  src: url("fonts/LostaMasta-Light.otf") format("opentype");
+}
