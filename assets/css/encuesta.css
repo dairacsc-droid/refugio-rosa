@@ -7,6 +7,14 @@
   font-family: "LostaMasta-Light";
   src: url("fonts/LostaMasta-Light.otf") format("opentype");
 }
+@font-face {
+  font-family: "marigny-medium-italic";
+  src: url("fonts/marigny-medium-italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "marigny-thin";
+  src: url("fonts/marigny-thin.ttf") format("truetype");
+}
 body {
   font-family: Arial, sans-serif;
   background: radial-gradient(#fab3da, #fdd5ec);
