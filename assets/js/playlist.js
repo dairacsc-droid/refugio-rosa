@@ -1,30 +1,56 @@
-// Lista de cartas (cada una con su info)
-const generos = [
-  ["pop", "../img/pop.jpg", "Pop", "Ritmos alegres y pegajosos que nunca pasan de moda."],
-  ["rock", "../img/rock.jpg", "Rock", "Potente, rebelde y lleno de energía."],
-  ["lofi", "../img/lofi.jpg", "Lo-Fi", "Ideal para estudiar y relajarte, con beats suaves."],
-  ["reggaeton", "../img/regueton.jpg", "Reggaetón", "Ritmos tropicales para bailar y disfrutar."],
-  ["electronica", "../img/electronica.jpeg", "Electrónica", "Música vibrante con sintetizadores y beats electrizantes."],
-  ["jazz", "../img/jazz.jpg", "Jazz", "Improvisación y melodías suaves, ideal para momentos tranquilos."],
-  ["clasica", "../img/clasica.jpg", "Clásica", "La música más elegante, perfecta para relajarse y concentrarse."],
-  ["indie", "../img/indie.jpg", "Indie", "Sonidos alternativos y auténticos para los más experimentales."]
-];
+let datos =[
+    {
+    nombre:"Pop",
+    descripcion :"Ritmos alegres y pegajosos que nunca pasan de moda "
+    },
+    {
+        nombre:"Rock",
+        descripcion:"Potente, rebelde y lleno de energía."
+    },
+    {
+       
+        nombre:"Lofi",
+        descripcion:"Ideal para estudiar y relajarte, con beats suaves."
+    },
+    {
+         
+        nombre:"Reggaeton",
+        descripcion:"Ritmos tropicales para bailar y disfrutar."
+    },
+    {
+        
+        nombre:"Electronica",
+        descripcion:" Música vibrante con sintetizadores y beats electrizantes.",
+    },
+    {
+        
+        nombre:"Jazz",
+        descripcion:" Improvisación y melodías suaves, ideal para momentos tranquilos.",
+    },
+     {
+       
+        nombre:"Clasica",
+        descripcion:"La música más elegante, perfecta para relajarse y concentrarse.",
+    }, {
+        
+        nombre:"Indie",
+        descripcion:" Sonidos alternativos y auténticos para los más experimentales.",
+    },
+]
 
-// Dónde va todo
-const contenedor = document.getElementById("contenedor");
+var contenedor = document.getElementById("contenedor");
 
-// Crear cada carta
-for (let i = 0; i < generos.length; i++) {
-  let genero = generos[i];
+// Bucle for clásico
+for (let i = 0; i < datos.length; i++) {
 
   contenedor.innerHTML += `
-    <a class="carta ${genero[0]}" href="#">
+    <a class="carta" href="#">
       <div class="imagen">
-        <img src="${genero[1]}" alt="${genero[2]}">
+        <img src="../img/${datos[i].nombre.toLowerCase()}.jpg" alt="${datos[i].nombre}">
       </div>
       <p class="gene">Género</p>
-      <p class="name">${genero[2]}</p>
-      <p class="description">${genero[3]}</p>
+      <p class="name">${datos[i].nombre}</p>
+      <p class="description">${datos[i].descripcion}</p>
     </a>
   `;
 }
