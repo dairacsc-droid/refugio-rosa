@@ -15,7 +15,8 @@
 .moodboard {
   border-radius: 10px;
   width: fit-content;
-  background-color: #f6a9c3;
+  background-color: #facfdd;
+  font-family: "LostaMasta-Light";
 }
 
 .frase {
@@ -66,7 +67,9 @@ body {
   max-width: 800px;
   margin: 0 auto;
 }
-
+.manifestacion-container h2 {
+  font-family: "LostaMasta-Light";
+}
 .mood {
   width: 50%;
 }
