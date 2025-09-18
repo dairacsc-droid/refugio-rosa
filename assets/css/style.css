@@ -92,3 +92,20 @@ body {
     margin-bottom: 30px;
   }
 }
+.img-ajustada {
+  max-width: 50%;
+  height: auto;
+}
+
+@media (min-width: 992px) {
+  .img-ajustada {
+    max-width: 85%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .lead {
+    font-size: 1.25rem; /* Texto un poco más grande */
+    line-height: 1;
+  }
+}

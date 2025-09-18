@@ -30,6 +30,9 @@ body {
   min-height: 100%; /* Mismo alto */
   display: flex; /* Para alinear contenido */
 }
+.icon {
+  max-width: 200px;
+}
 
 /* TEXTO */
 .quienes-somos {
@@ -52,19 +55,19 @@ body {
 
 /* IMAGEN */
 .icon {
-  max-width: 100%;
-  border-radius: 10px;
-  height: auto;
+  width: 180px; /* ancho fijo */
+  height: 180px; /* alto fijo */
+  object-fit: contain; /* mantiene proporciones dentro del cuadro */
 }
-
 /* RESPONSIVE (STACK EN MÓVILES) */
 @media (max-width: 767px) {
   .d-flex {
     flex-direction: column;
   }
 
-  img {
-    width: 420px;
+  .icon {
+    width: 220px;
+    height: 220px;
   }
 
   .quienes-somos,

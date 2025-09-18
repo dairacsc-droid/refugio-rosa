@@ -20,11 +20,16 @@ body {
   font-family: "LostaMasta-Light";
 }
 
-span {
-  padding: 10px;
+#tarjetas-container {
   border-radius: 10px;
-  font-size: 36px;
+
   color: #a34a67;
+}
+#tarjetas-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
 }
 img {
   border-radius: none;
