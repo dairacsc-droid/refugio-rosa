@@ -3,6 +3,9 @@ let tipsAutocuidado = [
     name: "Cuida tu mente",
     description: "Escribe lo que sientes, haz pausas de redes y date permiso de descansar.",
     imgUrl: ""
+    description:
+      "Escribe lo que sientes, haz pausas de redes y date permiso de descansar.",
+    imgUrl: "../img/escribeloquesiento.jpeg",
   },
   {
     name: "Mantente saludable",
@@ -12,34 +15,38 @@ let tipsAutocuidado = [
   {
     name: "Expresa tu creatividad",
     description: "Dibuja, pinta o cocina algo nuevo sin buscar que sea perfecto.",
-    imgUrl: "https://web.whatsapp.com/0d647603-48d5-4d5c-91d6-3aef21a1bc5d"
+    imgUrl: ""
+    description:
+      "Dibuja, pinta o cocina algo nuevo sin buscar que sea perfecto.",
+    imgUrl: "../img/pintar.jpeg",
   },
   {
     name: "Engríete",
-    description: "Toma una ducha relajante, respira profundo y disfruta pequeños placeres.",
-    imgUrl: "blob:https://web.whatsapp.com/2c7346c8-7a3b-4ab9-af1e-dcdb4261074a"
+    description:
+      "Toma una ducha relajante, respira profundo y disfruta pequeños placeres.",
+    imgUrl: "../img/tomaunaducha.jpeg",
   },
   {
     name: "Desconéctate un rato",
     description: "Apaga el celular una hora y disfruta el momento presente.",
-    imgUrl: "../img/apagaelcel.jpeg"
+    imgUrl: "../img/apagaelcel.jpeg",
   },
   {
     name: "Rutina de amor propio",
-    description: "Cuida tu piel, ponte tu perfume favorito o arréglate solo para ti.",
-    imgUrl: "../img/rutina.jpeg"
+    description:
+      "Cuida tu piel, ponte tu perfume favorito o arréglate solo para ti.",
+    imgUrl: "../img/rutina.jpeg",
   },
   {
     name: "Lee algo que te inspire",
     description: "Desde un libro hasta frases bonitas en Pinterest.",
-    imgUrl: "blob:https://web.whatsapp.com/0f78326e-c84a-4d9c-bcb1-da8bda4102c0"
+    imgUrl: "../img/leealgoqueteinspire.jpeg",
   },
   {
     name: "Conecta con la naturaleza",
     description: "Pasea, siéntate al sol o acaricia a tu mascota.",
-    imgUrl: "blob:https://web.whatsapp.com/555b3972-d0da-4ac6-a8f5-e8ea9b4ee905"
+    imgUrl: "../img/naturaleza.jpeg",
   },
-
 ];
 
 let contenedor = document.getElementById("tarjetas-container");

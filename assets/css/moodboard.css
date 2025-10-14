@@ -66,12 +66,16 @@ body {
   background: #facfdd;
   max-width: 800px;
   margin: 0 auto;
+  min-height: 350px;
 }
 .manifestacion-container h2 {
   font-family: "LostaMasta-Light";
 }
 .mood {
   width: 50%;
+}
+.manifestacion-container p {
+  font-size: 17px;
 }
 
 #carouselExampleIndicators img {
