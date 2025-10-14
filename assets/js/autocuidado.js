@@ -2,7 +2,7 @@ let tipsAutocuidado = [
   {
     name: "Cuida tu mente",
     description: "Escribe lo que sientes, haz pausas de redes y date permiso de descansar.",
-imgUrl: 
+    imgUrl: ""
   },
   {
     name: "Mantente saludable",
