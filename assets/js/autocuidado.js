@@ -2,7 +2,7 @@ let tipsAutocuidado = [
   {
     name: "Cuida tu mente",
     description: "Escribe lo que sientes, haz pausas de redes y date permiso de descansar.",
-    imgUrl: ""
+    imgUrl: "../img/escribeloquesiento.jpeg"
     description:
       "Escribe lo que sientes, haz pausas de redes y date permiso de descansar.",
     imgUrl: "../img/escribeloquesiento.jpeg",
@@ -15,7 +15,7 @@ let tipsAutocuidado = [
   {
     name: "Expresa tu creatividad",
     description: "Dibuja, pinta o cocina algo nuevo sin buscar que sea perfecto.",
-    imgUrl: ""
+    imgUrl: "../img/pintar.jpeg"
     description:
       "Dibuja, pinta o cocina algo nuevo sin buscar que sea perfecto.",
     imgUrl: "../img/pintar.jpeg",
