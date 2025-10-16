@@ -1,8 +1,8 @@
 let tipsAutocuidado = [
   {
     name: "Cuida tu mente",
-    description: "Escribe lo que sientes, haz pausas de redes y date permiso de descansar.",
-    imgUrl: "../img/escribeloquesiento.jpeg"
+    description:
+      "Escribe lo que sientes, haz pausas de redes y date permiso de descansar.",
     description:
       "Escribe lo que sientes, haz pausas de redes y date permiso de descansar.",
     imgUrl: "../img/escribeloquesiento.jpeg",
@@ -10,12 +10,12 @@ let tipsAutocuidado = [
   {
     name: "Mantente saludable",
     description: "Duerme lo suficiente, hidrátate y mueve tu cuerpo día a día.",
-    imgUrl: "../img/grupo.jpg  "
+    imgUrl: "../img/grupo.jpg  ",
   },
   {
     name: "Expresa tu creatividad",
-    description: "Dibuja, pinta o cocina algo nuevo sin buscar que sea perfecto.",
-    imgUrl: "../img/pintar.jpeg"
+    description:
+      "Dibuja, pinta o cocina algo nuevo sin buscar que sea perfecto.",
     description:
       "Dibuja, pinta o cocina algo nuevo sin buscar que sea perfecto.",
     imgUrl: "../img/pintar.jpeg",
