@@ -2,7 +2,7 @@
 @import url("../css/footer.css");
 @font-face {
   font-family: "LostaMasta-Light";
-  src: url("fonts/LostaMasta-Light.otf") format("opentype");
+  src: url("../fonts/LostaMasta-Light.otf") format("opentype");
 }
 @font-face {
   font-family: "marigny-medium-italic";
