@@ -19,86 +19,93 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
+    <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/playlist.css" />
     <link rel="stylesheet" href="../css/shared.css" />
     <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/autocuidado.css" />
+    <link rel="stylesheet" href="../css/historias.css" />
   </head>
   <!-- BARRA DE NAVEGACIÓN ^ -->
 
-  <body class="fondoplay">
-    <header class="navegacion">
-      <div class="lazos">
-        <img
-          class="lazo1"
-          src="https://i.postimg.cc/6QfkvLQN/9c27d61f92ggrtyu56et4561.png"
-          alt="lazo"
-        />
-        <img
-          class="lazo2"
-          src="https://i.postimg.cc/6QfkvLQN/9c27d61f92ggrtyu56et4561.png"
-          alt="lazo2"
-        />
-        <img
-          class="lazo3"
-          src="https://i.postimg.cc/6QfkvLQN/9c27d61f92ggrtyu56et4561.png"
-          alt="lazo3"
-        />
-        <img
-          class="lazo4"
-          src="https://i.postimg.cc/6QfkvLQN/9c27d61f92ggrtyu56et4561.png"
-          alt="lazo4"
-        />
-        <h1 class="titulo">Mi Refugio Rosa</h1>
-        <p class="slogan">
-          Un espacio para soñar, crecer y brillar como tú mereces.
-        </p>
+  <body class="">
+    <header>
+      <div class="logo">
+        <h1>Refugio<span>Rosa</span></h1>
       </div>
+      <nav>
+        <input type="checkbox" id="menu" />
+        <label for="menu" class="hamburguesa">☰</label>
+        <ul>
+          <li class="active"><a href="../../index.html">Inicio</a></li>
+          <li><a href="./assets/html/autocuidado.html">Autocuidado</a></li>
+          <li><a href="./assets/html/playlist.html">Playlist</a></li>
+          <li><a href="./assets/html/historias.html">Historias</a></li>
+          <li><a href="#">Chat</a></li>
+          <li><a href="#">Unete</a></li>
+        </ul>
+      </nav>
     </header>
-
-    <!-- Barra de navegación adaptable -->
-    <nav class="barradenav">
-      <input type="checkbox" id="menu" />
-      <label for="menu" class="hamburguesa">☰</label>
-
-      <a href="../../index.html">Inicio</a>
-      <a href="./somos.html">¿Quiénes somos?</a>
-      <a href="./autocuidado.html">Autocuidado</a>
-      <a href="./moodboard.html">Moodboard</a>
-      <a href="./playlist.html">Playlist emocional</a>
-      <a href="./historias.html">Historias</a>
-    </nav>
     <!-- BARRA DE NAVEGACIÓN ^ -->
 
-    <header class="generos mx-auto mt-5">
-      <h1>Géneros Musicales</h1>
-      <p class="lead">✧ Música que te relaja y te acompaña siempre ✧</p>
-    </header>
+    <div class="player-wrap">
+      <section class="player-body">
+        <!-- Left: vinyl -->
+        <div class="left-col">
+          <div class="vinyl-wrap">
+            <div id="vinyl" class="vinyl">
+              <!-- center label -->
+              <div class="label">
+                <div class="label-text">Addict</div>
+              </div>
+            </div>
 
-    <main>
-      <section id="contenedor" class="contenedor-cartas"></section>
-    </main>
+            <div class="controls">
+              <button id="prevBtn" class="ctl small">⟨</button>
+              <button id="playBtn" class="ctl play">►</button>
+              <button id="pauseBtn" class="ctl pause hidden">❚❚</button>
+              <button id="nextBtn" class="ctl small">⟩</button>
+            </div>
+          </div>
+        </div>
 
-    <footer>
-      <div class="social">
-        <a href="#">
-          <i class="fab fa-facebook"></i>
-        </a>
-        <a href="#">
-          <i class="fab fa-instagram"></i>
-        </a>
+        <!-- Center: info -->
+        <div class="center-col">
+          <h1 class="track-title" id="trackTitle">Addict</h1>
+          <p class="artist">silva hound</p>
 
-        <a href="#">
-          <i class="fab fa-youtube"></i>
-        </a>
-        <a href="#"><i class="fab fa-pinterest"></i> </a>
+          <div class="description" id="trackDesc">
+            ADDICT™ es una canción compuesta por el compositor de YouTube Silva
+            Hound e interpretada por Michael Kovach como Angel Dust y Kelly
+            "Chi-Chi" Boyer como Cherri Bomb.
+          </div>
+
+          <a id="readMore" href="#" class="read-more">leer más..</a>
+        </div>
+
+        <!-- Right: playlist -->
+        <aside class="right-col">
+          <h3 class="playlist-title">Playlist</h3>
+          <div class="playlist" id="playlist">
+            <!-- JS generará las canciones -->
+          </div>
+        </aside>
+      </section>
+
+      <!-- Bottom search bar -->
+      <div class="search-bar">
+        <input
+          id="searchInput"
+          placeholder="🔍 presiona para buscar una canción"
+        />
+        <button id="clearSearch" class="xbtn">✕</button>
       </div>
-      <div class="nav-section">
-        <p>Refugio Rosa: tu rincón para sanar, soñar y brillar.</p>
-        <p>Donde cada historia inspira, y cada emoción importa.</p>
-      </div>
-      <div class="copy">@Refugio rosa | Todos los derechos reservados</div>
-    </footer>
+
+      <!-- audio -->
+      <audio id="audio" preload="metadata"></audio>
+    </div>
+
+    <script src="playlist.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
