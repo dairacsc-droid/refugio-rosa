@@ -1,3 +1,4 @@
+import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
 
 function Header() {
@@ -13,12 +14,15 @@ function Header() {
         <input type="checkbox" id="menu-toggle" />
         <label htmlFor="menu-toggle" className="hamburger">☰</label>
         <ul className="nav-links">
-          <li className="active"><a href="#">Inicio</a></li>
-          <li><a href="#">Autocuidado</a></li>
-          <li><a href="#">Playlist</a></li>
-          <li><a href="#">Historias</a></li>
-          <li><a href="#">Chat</a></li>
-          <li><a href="#">Únete</a></li>
+          <li>
+           <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>
+            Inicio
+           </NavLink></li>
+           <li><Link to="/unete">Unete</Link></li>
+           <li><Link to="/chat">Chat</Link></li>
+           <li><Link to="/autocuidado">Autocuidado</Link></li>
+           <li><Link to="/playlist">Playlist</Link></li>
+           <li><Link to="/historias">Historias</Link></li>
         </ul>
       </nav>
     </header>

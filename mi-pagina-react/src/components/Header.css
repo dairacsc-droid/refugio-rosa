@@ -49,7 +49,7 @@ nav {
   transition: color 0.3s;
 }
 
-.nav-links li.active a,
+.nav-links a.active,
 .nav-links li a:hover {
   color: #e25a87;
 }

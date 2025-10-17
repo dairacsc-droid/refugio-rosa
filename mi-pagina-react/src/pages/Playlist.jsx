@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import "../components/Playlist.css";
+import "../pages/Playlist.css";
 
 const Playlist = () => {
   // Lista de canciones 🎶
