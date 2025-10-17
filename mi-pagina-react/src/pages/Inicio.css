@@ -21,9 +21,7 @@
   height: 400px;
   object-fit: cover;
 }
-body {
-  background-color: white;
-}
+
 .slide .text {
   position: absolute;
   bottom: 40px;
@@ -66,13 +64,14 @@ body {
   padding: 20px 20px;
   background: #fff;
 }
-.caracteristicas h3 {
+.objetivos-container {
   text-align: center;
   color: #e25a87;
   font-family: "Pacifico", cursive;
   font-size: 38px;
   margin-bottom: 20px;
 }
+
 .services h3 {
   color: #e25a87;
   font-family: "Pacifico", cursive;
@@ -160,11 +159,22 @@ body {
 }
 
 .caracteristicas {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.objetivos-container {
+  text-align: center;
+  font-size: 32px;
+  color: #e25a87;
+  margin-bottom: 30px;
+}
+
+.grid-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  max-width: 800px;
-  margin: 40px auto;
 }
 
 .caracteristica {
@@ -244,4 +254,7 @@ footer {
     font-size: 1.25rem;
     line-height: 1;
   }
+}
+main {
+  background: white; /* o cualquier color que quieras */
 }

@@ -39,30 +39,31 @@ function Inicio() {
         <button className="next">&#10095;</button>
       </section>
       <section className="caracteristicas">
-        <h3>Objetivos</h3>
-        <br />
-        <div className="caracteristica">
-          <h6>✦ Espacio para desahogarse</h6>
-          <p>
-            Expresar lo que sentimos, lo bueno, lo malo, lo raro, todo vale.
-          </p>
-        </div>
+        <h3 className="objetivos-container">Objetivos</h3>
 
-        <div className="caracteristica">
+        <div className="grid-cards">
+         <div className="caracteristica">
+          <h6>✦ Espacio para desahogarse</h6>
+          <p>Expresar lo que sentimos, lo bueno, lo malo, lo raro, todo vale.</p>
+         </div>
+
+         <div className="caracteristica">
           <h6>✦ Conectar de verdad</h6>
           <p>Aquí puedes hacer amigas que te entiendan sin juzgarte.</p>
-        </div>
+         </div>
 
-        <div className="caracteristica">
+         <div className="caracteristica">
           <h6>✦ Tips para todas</h6>
           <p>Consejitos sobre estudio, autocuidado, paz mental y más.</p>
-        </div>
+         </div>
 
-        <div className="caracteristica">
+         <div className="caracteristica">
           <h6>✦ Crecemos juntas</h6>
           <p>Un mal día jamás te define.</p>
+         </div>
         </div>
       </section>
+
       <section className="services">
         <h3>
           Visión & Misión <br />
