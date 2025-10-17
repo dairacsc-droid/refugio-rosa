@@ -18,11 +18,11 @@ function Header() {
            <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>
             Inicio
            </NavLink></li>
-           <li><Link to="/unete">Unete</Link></li>
            <li><Link to="/chat">Chat</Link></li>
            <li><Link to="/autocuidado">Autocuidado</Link></li>
            <li><Link to="/playlist">Playlist</Link></li>
            <li><Link to="/historias">Historias</Link></li>
+           <li><Link to="/unete">Unete</Link></li>
         </ul>
       </nav>
     </header>

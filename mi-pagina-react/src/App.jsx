@@ -14,11 +14,11 @@ function App() {
     <Header/>
     <Routes>
       <Route path='/' element={<Inicio/>}/>
-      <Route path='/unete' element={<Unete/>}/>
       <Route path='/chat' element={<Chat/>}/>
       <Route path='/autocuidado' element={<Autocuidado/>}/>
       <Route path='/playlist' element={<Playlist/>}/>
       <Route path='/historias'element={<Historias/>}/>
+      <Route path='/unete' element={<Unete/>}/>
     </Routes>
     </>
   );
