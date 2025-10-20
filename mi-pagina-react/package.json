@@ -25,11 +25,7 @@
     "eslint-plugin-react-refresh": "^0.4.22",
     "globals": "^16.4.0",
     "postcss": "^8.5.6",
-<<<<<<< HEAD
     "tailwindcss": "^3.4.13",
-=======
-    "tailwindcss": "^4.1.14",
->>>>>>> 0d35b6f57a8adeb00bdf8df7df4f47b61f3a0b29
-    "vite": "^7.1.7"
+    "vite": "^7.1.10"
   }
 }
