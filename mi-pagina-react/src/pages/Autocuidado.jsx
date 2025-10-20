@@ -1,51 +1,59 @@
 import React from "react";
 import Card from "../components/Card";
 import "../pages/Autocuidado.css";
+import escribe from "../assets/tips/escribe.jpg";
+import saludable from "../assets/tips/saludable.jpg";
+import dibuja from "../assets/tips/dibuja.jpg";
+import engriete from "../assets/tips/engriete.jpg";
+import desconectate from "../assets/tips/desconectate.jpg";
+import rutina from "../assets/tips/rutina.jpg";
+import lee from "../assets/tips/lee.jpg";
+import naturaleza from "../assets/tips/naturaleza.jpg";
 
 const tipsAutocuidado = [
   {
     name: "Cuida tu mente",
     description:
       "Escribe lo que sientes, haz pausas de redes y date permiso de descansar.",
-    imgUrl: "../../assets",
+    imgUrl: escribe,
   },
   {
     name: "Mantente saludable",
     description: "Duerme lo suficiente, hidrátate y mueve tu cuerpo día a día.",
-    imgUrl: "../../assets/img/grupo.jpg",
+    imgUrl: saludable,
   },
   {
     name: "Expresa tu creatividad",
     description:
       "Dibuja, pinta o cocina algo nuevo sin buscar que sea perfecto.",
-    imgUrl: "/assets/img/pintar.jpeg",
+    imgUrl: dibuja,
   },
   {
     name: "Engríete",
     description:
       "Toma una ducha relajante, respira profundo y disfruta pequeños placeres.",
-    imgUrl: "/assets/img/tomaunaducha.jpeg",
+    imgUrl: engriete,
   },
   {
     name: "Desconéctate un rato",
     description: "Apaga el celular una hora y disfruta el momento presente.",
-    imgUrl: "/assets/img/apagaelcel.jpeg",
+    imgUrl: desconectate,
   },
   {
     name: "Rutina de amor propio",
     description:
       "Cuida tu piel, ponte tu perfume favorito o arréglate solo para ti.",
-    imgUrl: "/assets/img/rutina.jpeg",
+    imgUrl: rutina,
   },
   {
     name: "Lee algo que te inspire",
     description: "Desde un libro hasta frases bonitas en Pinterest.",
-    imgUrl: "/assets/img/leealgoqueteinspire.jpeg",
+    imgUrl: lee,
   },
   {
     name: "Conecta con la naturaleza",
     description: "Pasea, siéntate al sol o acaricia a tu mascota.",
-    imgUrl: "/assets/img/naturaleza.jpeg",
+    imgUrl: naturaleza,
   },
 ];
 function Autocuidado() {

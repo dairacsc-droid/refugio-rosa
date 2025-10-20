@@ -18,8 +18,11 @@
   justify-content: center;
   border-radius: 10px;
   color: #a34a67;
+  padding: 15px;
 }
 
 #tarjetas-container img {
+  display: block;
+  margin: 0 auto;
   border-radius: 10px;
 }
