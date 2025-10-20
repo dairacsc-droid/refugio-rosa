@@ -32,17 +32,13 @@ function Footer() {
             </li>
             <li>
               <a href="#" className="hover:text-rose-500 transition">
-                Moodboard
+                Chat
               </a>
             </li>
+            
             <li>
               <a href="#" className="hover:text-rose-500 transition">
-                Historias
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-rose-500 transition">
-                Contacto
+                Unete
               </a>
             </li>
           </ul>

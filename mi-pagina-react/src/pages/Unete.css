@@ -7,9 +7,21 @@ body {
   background-color: white;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* Layout general */
 .layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 50px;
   margin: 80px;
+  max-width: 1200px;
 }
 
 /* Formularios al costado */
@@ -49,7 +61,6 @@ body {
 
 /* Cards */
 .card {
-  justify-items: center;
   background-color: #fff;
   border-radius: 25px;
   padding: 40px 45px;
@@ -157,7 +168,6 @@ button:hover {
 
 /* PERFIL ACTIVO - centrar todo */
 .layout.perfil-activo {
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -167,10 +177,7 @@ button:hover {
   padding: 0;
 }
 
-.layout.perfil-activo .formularios {
-  display: none;
-}
-
+.layout.perfil-activo .formularios,
 .layout.perfil-activo .decoracion {
   display: none;
 }
@@ -179,22 +186,67 @@ button:hover {
   width: 90%;
   max-width: 500px;
   margin: 0 auto;
-  text-align: center;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
+/* Responsive: Tablets y celulares */
+@media (max-width: 1024px) {
   .layout {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* apilar elementos */
+    align-items: center; /* centrar horizontalmente */
+    justify-content: flex-start; /* no centrar vertical para tablet */
+    padding: 20px; /* más compacto */
+    margin: 0 auto; /* eliminar margen grande de escritorio */
+    gap: 20px; /* reducir separación */
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* eliminar scroll horizontal */
+  }
+
+  .formularios {
+    width: 100%; /* ocupar todo el ancho posible */
+    max-width: 450px; /* limitar tamaño */
+  }
+
+  .decoracion {
+    display: none; /* quitar imagen lateral */
+  }
+
+  .card {
+    width: 100%;
+    max-width: 450px;
     padding: 20px;
   }
 
-  .decoracion img {
-    max-width: 280px;
+  .perfil {
+    width: 90%;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 600px) {
+  .layout {
+    padding: 15px;
+    gap: 15px;
   }
 
-  .layout.perfil-activo .perfil {
-    max-width: 350px;
+  .card {
+    padding: 15px;
+  }
+
+  .perfil {
+    max-width: 95%;
+  }
+
+  input,
+  textarea,
+  button {
+    font-size: 0.95rem; /* ajustar tamaño de inputs y botones */
+  }
+
+  .avatar img {
+    width: 100px;
+    height: 100px;
   }
 }

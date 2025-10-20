@@ -1,0 +1,130 @@
+/* Footer general */
+footer {
+  background: linear-gradient(to right, #fbc3d6, #fce7f0, #fbc3d6);
+  color: #e75480;
+  padding: 2.5rem 1rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Contenedor */
+footer .footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  footer .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  footer .footer-container {
+    grid-template-columns: repeat(3, 1fr);
+    text-align: left;
+    gap: 4rem;
+  }
+}
+
+/* Secciones */
+footer h2,
+footer h3 {
+  margin-bottom: 0.5rem;
+}
+
+footer p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #7a4f65;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: #7a4f65;
+  transition: color 0.3s;
+}
+
+footer ul li a:hover {
+  color: #e75480;
+}
+
+/* Iconos sociales */
+footer .socials {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  footer .socials {
+    justify-content: flex-start;
+  }
+}
+
+footer .socials a {
+  background: #fff;
+  border-radius: 50%;
+  padding: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s;
+}
+
+footer .socials a:hover {
+  background: #f8c0d4;
+}
+
+/* Formulario suscripción */
+footer .subscribe-form {
+  margin-top: 1rem;
+}
+
+footer .subscribe-form label {
+  font-size: 0.875rem;
+  color: #7a4f65;
+}
+
+footer .subscribe-form input[type="email"] {
+  padding: 0.5rem 1rem;
+  border-radius: 50px 0 0 50px;
+  border: 1px solid #f2a7b1;
+  outline: none;
+  flex-grow: 1;
+}
+
+footer .subscribe-form button {
+  padding: 0.5rem 1rem;
+  border-radius: 0 50px 50px 0;
+  border: none;
+  background-color: #e75480;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+footer .subscribe-form button:hover {
+  background-color: #f06a97;
+}
+
+/* Copyright */
+footer .copyright {
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: #e75480;
+  border-top: 1px solid #f2a7b1;
+  padding-top: 1rem;
+  text-align: center;
+}
