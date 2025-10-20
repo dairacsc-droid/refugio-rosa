@@ -51,8 +51,8 @@ const tipsAutocuidado = [
 function Autocuidado() {
   return (
     <section className="autocuidado">
-      <div className="container">
-        <h2 className="m-6 text-5xl font-bold tips">
+      <div >
+        <h2 className=" m-6 text-5xl font-bold tips">
           <span>Tips para ti</span>
         </h2>
 

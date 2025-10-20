@@ -4,19 +4,12 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: white;
 }
 
 /* Layout general */
 .layout {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 50px;
-  margin: 0 auto;
-  min-height: 100vh;
-  padding: 50px 20px;
-  max-width: 1200px;
+  margin: 80px;
 }
 
 /* Formularios al costado */
@@ -56,6 +49,7 @@ body {
 
 /* Cards */
 .card {
+  justify-items: center;
   background-color: #fff;
   border-radius: 25px;
   padding: 40px 45px;
@@ -145,7 +139,6 @@ button:hover {
 
 .perfil h2 {
   color: #e75480;
-  margin-bottom: 20px;
 }
 
 .perfil p {
@@ -164,6 +157,7 @@ button:hover {
 
 /* PERFIL ACTIVO - centrar todo */
 .layout.perfil-activo {
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -184,7 +178,7 @@ button:hover {
 .layout.perfil-activo .perfil {
   width: 90%;
   max-width: 500px;
-  margin: 0;
+  margin: 0 auto;
   text-align: center;
 }
 

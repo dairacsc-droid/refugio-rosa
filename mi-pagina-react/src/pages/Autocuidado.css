@@ -6,6 +6,9 @@
 
 .tips span {
   color: #e58fac;
+  text-align: center;
+  display: block;
+  width: 100%;
 }
 
 #tarjetas-container {

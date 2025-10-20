@@ -1,42 +1,69 @@
+import { useState, useEffect } from "react";
 import './Inicio.css'
 
 function Inicio() {
-    
+    const slidesData = [
+    {
+      img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800",
+      text: "We Implement Your Delicious Dreams...",
+    },
+    {
+      img: "https://images.unsplash.com/photo-1565958011705-44e211f0464a?w=800",
+      text: "Made For You With Love",
+    },
+    {
+      img: "https://images.unsplash.com/photo-1606313564200-1f6a6ec96741?w=800",
+      text: "Sweet Moments, Sweet Memories",
+    },
+  ];
+
+  const [current, setCurrent] = useState(0);
+  const totalSlides = slidesData.length;
+
+  // Funciones para Next y Prev
+  const nextSlide = () => setCurrent((prev) => (prev + 1) % totalSlides);
+  const prevSlide = () =>
+    setCurrent((prev) => (prev - 1 + totalSlides) % totalSlides);
+
+  // Auto-slide cada 4 segundos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % totalSlides);
+    }, 4000);
+
+    return () => clearInterval(interval); // Limpieza al desmontar
+  }, [totalSlides]);
+
   return (
     <>
     <main>
       <section className="slider">
-        <div className="slides">
-          <div className="slide active">
-            <img
-              src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800"
-              alt="Cupcake 1"
-            />
-            <div className="text">
-              <h2>We Implement Your Delicious Dreams...</h2>
+        <div
+          className="slides"
+          style={{
+            transform: `translateX(-${current * 100}%)`,
+            transition: "transform 0.5s ease-in-out",
+          }}
+        >
+          {slidesData.map((slide, index) => (
+            <div
+              key={index}
+              className={`slide ${index === current ? "active" : ""}`}
+            >
+              <img src={slide.img} alt={`Cupcake ${index + 1}`} />
+              <div className="text">
+                <h2>{slide.text}</h2>
+              </div>
             </div>
-          </div>
-          <div className="slide">
-            <img
-              src="https://images.unsplash.com/photo-1565958011705-44e211f0464a?w=800"
-              alt="Cupcake 2"
-            />
-            <div className="text">
-              <h2>Made For You With Love </h2>
-            </div>
-          </div>
-          <div className="slide">
-            <img
-              src="https://images.unsplash.com/photo-1606313564200-1f6a6ec96741?w=800"
-              alt="Cupcake 3"
-            />
-            <div class="text">
-              <h2>Sweet Moments, Sweet Memories</h2>
-            </div>
-          </div>
+          ))}
         </div>
-        <button className="prev">&#10094;</button>
-        <button className="next">&#10095;</button>
+
+        <button className="prev" onClick={prevSlide}>
+          &#10094;
+        </button>
+        <button className="next" onClick={nextSlide}>
+          &#10095;
+        </button>
       </section>
       <section className="caracteristicas">
         <h3 className="objetivos-container">Objetivos</h3>
