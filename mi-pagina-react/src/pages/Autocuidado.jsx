@@ -1,11 +1,12 @@
 import React from "react";
 import Card from "../components/Card";
-import "../pages/Autocuidado.css"
+import "../pages/Autocuidado.css";
 
 const tipsAutocuidado = [
   {
     name: "Cuida tu mente",
-    description: "Escribe lo que sientes, haz pausas de redes y date permiso de descansar.",
+    description:
+      "Escribe lo que sientes, haz pausas de redes y date permiso de descansar.",
     imgUrl: "../../assets",
   },
   {
@@ -15,12 +16,14 @@ const tipsAutocuidado = [
   },
   {
     name: "Expresa tu creatividad",
-    description: "Dibuja, pinta o cocina algo nuevo sin buscar que sea perfecto.",
+    description:
+      "Dibuja, pinta o cocina algo nuevo sin buscar que sea perfecto.",
     imgUrl: "/assets/img/pintar.jpeg",
   },
   {
     name: "Engríete",
-    description: "Toma una ducha relajante, respira profundo y disfruta pequeños placeres.",
+    description:
+      "Toma una ducha relajante, respira profundo y disfruta pequeños placeres.",
     imgUrl: "/assets/img/tomaunaducha.jpeg",
   },
   {
@@ -30,7 +33,8 @@ const tipsAutocuidado = [
   },
   {
     name: "Rutina de amor propio",
-    description: "Cuida tu piel, ponte tu perfume favorito o arréglate solo para ti.",
+    description:
+      "Cuida tu piel, ponte tu perfume favorito o arréglate solo para ti.",
     imgUrl: "/assets/img/rutina.jpeg",
   },
   {
@@ -47,21 +51,22 @@ const tipsAutocuidado = [
 function Autocuidado() {
   return (
     <section className="autocuidado">
-     <div className="container">
-        <h2 className="tips ">
-            <span>Tips para ti</span>
+      <div className="container">
+        <h2 className="m-6 text-5xl font-bold tips">
+          <span>Tips para ti</span>
         </h2>
-     <div className="row" id="tarjetas-container">
-      {tipsAutocuidado.map((tip, index) => (
-        <Card
-          key={index}
-          name={tip.name}
-          description={tip.description}
-          imgUrl={tip.imgUrl}
-        />
-      ))}
+
+        <div className="row" id="tarjetas-container">
+          {tipsAutocuidado.map((tip, index) => (
+            <Card
+              key={index}
+              name={tip.name}
+              description={tip.description}
+              imgUrl={tip.imgUrl}
+            />
+          ))}
+        </div>
       </div>
-     </div>
     </section>
   );
 }

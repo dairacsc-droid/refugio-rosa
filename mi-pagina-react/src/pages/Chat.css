@@ -1,0 +1,144 @@
+/* Fondo general */
+.chat-container {
+  background: linear-gradient(90deg, #ffeef3 0%, #ffffff 50%, #ffeef3 100%);
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Caja principal */
+.chat-box {
+  background: #fffafc;
+  border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(231, 84, 128, 0.2);
+  padding: 30px;
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Título */
+.chat-box h2 {
+  color: #e75480;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.chat-descripcion {
+  text-align: center;
+  color: #777;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+/* Área de mensajes */
+.mensajes {
+  background-color: #ffffff;
+  border: 1px solid #f8c6d3;
+  border-radius: 15px;
+  padding: 20px;
+  height: 320px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Cada mensaje */
+.mensaje {
+  background: #ffe6ec;
+  padding: 12px 16px;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(231, 84, 128, 0.1);
+}
+
+.mensaje-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #c94f6d;
+  margin-bottom: 4px;
+}
+
+.texto {
+  color: #444;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.sin-mensajes {
+  text-align: center;
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Formulario del chat */
+.form-chat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  background: #fff;
+  border: 1px solid #f8c6d3;
+  border-radius: 40px;
+  padding: 8px 14px;
+  box-shadow: 0 3px 10px rgba(231, 84, 128, 0.1);
+}
+
+/* Campo de texto más grande */
+.form-chat input {
+  flex: 1;
+  padding: 14px 16px;
+  border: none;
+  font-size: 1rem;
+  color: #333;
+  background: transparent;
+  outline: none;
+  margin-bottom: 0;
+}
+
+.form-chat input::placeholder {
+  border: none;
+}
+
+/* Botón redondo */
+.form-chat button {
+  width: 45px;
+  height: 45px;
+  background-color: #e75480;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.form-chat button:hover {
+  background-color: #d64b72;
+  transform: scale(1.05);
+}
+
+/* Scroll personalizado */
+.mensajes::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mensajes::-webkit-scrollbar-thumb {
+  background-color: #f2a7b1;
+  border-radius: 10px;
+}
+
+.mensajes::-webkit-scrollbar-track {
+  background-color: #fffafc;
+}

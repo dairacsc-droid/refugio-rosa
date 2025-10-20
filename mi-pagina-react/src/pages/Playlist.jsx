@@ -58,7 +58,7 @@ const Playlist = () => {
   const handleEnd = () => handleNext();
 
   return (
-    <div className="player-wrap">
+    <div className="player-wrap ">
       <section className="player-body">
         {/* 🎵 Izquierda: disco */}
         <div className="left-col">

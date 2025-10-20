@@ -1,0 +1,206 @@
+/* Reset */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout general */
+.layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 50px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 50px 20px;
+  max-width: 1200px;
+}
+
+/* Formularios al costado */
+.formularios {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+/* Decoración lateral */
+.decoracion {
+  flex: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.decoracion img {
+  width: 100%;
+  max-width: 400px;
+  filter: drop-shadow(0 5px 15px rgba(231, 84, 128, 0.3));
+  animation: flotar 4s ease-in-out infinite;
+}
+
+@keyframes flotar {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Cards */
+.card {
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 40px 45px;
+  margin: 0;
+  box-shadow: 0 8px 25px rgba(255, 192, 203, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(231, 84, 128, 0.5);
+}
+
+/* Inputs y labels */
+label {
+  display: block;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #f2a7b1;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  font-size: 1rem;
+  outline: none;
+  background-color: #fffafc;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #e75480;
+  box-shadow: 0 0 6px rgba(231, 84, 128, 0.3);
+}
+
+/* Botones */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #e75480;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #d64b72;
+  transform: translateY(-2px);
+}
+
+/* Nota */
+.nota {
+  margin: 6px 0;
+  font-size: 0.9rem;
+}
+
+/* Avatar */
+.avatar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #f2a7b1;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(231, 84, 128, 0.3);
+}
+
+/* Perfil */
+.perfil {
+  text-align: center;
+  line-height: 1.8;
+}
+
+.perfil h2 {
+  color: #e75480;
+  margin-bottom: 20px;
+}
+
+.perfil p {
+  color: #555;
+  font-size: 1rem;
+}
+
+.perfil .descripcion {
+  font-style: italic;
+  background: #fffafc;
+  border-radius: 15px;
+  padding: 15px;
+  margin-top: 10px;
+  border: 1px solid #f2a7b1;
+}
+
+/* PERFIL ACTIVO - centrar todo */
+.layout.perfil-activo {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.layout.perfil-activo .formularios {
+  display: none;
+}
+
+.layout.perfil-activo .decoracion {
+  display: none;
+}
+
+.layout.perfil-activo .perfil {
+  width: 90%;
+  max-width: 500px;
+  margin: 0;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .layout {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .decoracion img {
+    max-width: 280px;
+  }
+
+  .layout.perfil-activo .perfil {
+    max-width: 350px;
+  }
+}
