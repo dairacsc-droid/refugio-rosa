@@ -42,7 +42,7 @@
 .next {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+
   background: #e25a87;
   color: white;
   border: none;
@@ -53,9 +53,11 @@
 
 .prev {
   left: 15px;
+  width: auto;
 }
 .next {
   right: 15px;
+  width: auto;
 }
 
 /* Services */
@@ -203,27 +205,7 @@
   font-size: 0.95rem;
   line-height: 1.4;
 }
-/* Footer */
-footer {
-  background: #f9c5d1;
-  text-align: center;
-  padding: 10px 10px;
-  color: #333;
-}
-.footer-content p {
-  margin: 16px;
-}
-.footer-content {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px;
-}
 
-.copyright {
-  margin-top: 20px;
-  font-size: 14px;
-}
 #menu {
   display: none;
 }
