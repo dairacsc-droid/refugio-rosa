@@ -91,8 +91,8 @@ function Unete() {
         )}
       </section>
 
-      {fase === "perfil" && (
-        <section className="card perfil ">
+      {fase === "perfil" ? (
+        <section className="card perfil">
           <h2>💗 Bienvenida a tu perfil</h2>
           <div className="avatar">
             <img src={avatarUrl} alt="Avatar" />
@@ -111,11 +111,9 @@ function Unete() {
           </p>
           <p className="descripcion">{descripcion || "Sin descripción."}</p>
         </section>
-      )}
-
-      {fase !== "perfil" && (
+      ) : (
         <aside className="decoracion">
-          <img src={Formulario} alt="chica escuchando musica " />
+          <img src={Formulario} alt="chica escuchando musica" />
         </aside>
       )}
     </main>
