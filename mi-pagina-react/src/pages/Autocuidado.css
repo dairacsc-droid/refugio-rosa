@@ -20,9 +20,12 @@
   color: #a34a67;
   padding: 15px;
 }
-
+.card-title {
+  font-size: 25px;
+}
 #tarjetas-container img {
   display: block;
   margin: 0 auto;
+  width: 100%;
   border-radius: 10px;
 }

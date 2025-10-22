@@ -27,7 +27,7 @@
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.7);
+
   padding: 15px 25px;
   border-radius: 20px;
 }
@@ -238,5 +238,25 @@
   }
 }
 main {
-  background: white; 
+  background: white;
+}
+/* 📱 Ajustes para pantallas medianas (tablets) */
+@media (max-width: 1024px) {
+  .slider {
+    height: 300px; /* reduce la altura del slider */
+  }
+
+  .slide img {
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .slide h2 {
+    font-size: 20px; /* texto un poco más pequeño */
+  }
+
+  .prev,
+  .next {
+    padding: 8px 12px;
+  }
 }

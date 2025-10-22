@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Unete.css";
+import Formulario from "../assets/formulario/formulario.jpg";
 
 function Unete() {
   const [fase, setFase] = useState("formBasico");
@@ -114,10 +115,7 @@ function Unete() {
 
       {fase !== "perfil" && (
         <aside className="decoracion">
-          <img
-            src="https://cdn.pixabay.com/photo/2022/05/17/12/12/flowers-7201391_1280.png"
-            alt="Decoración floral rosada"
-          />
+          <img src={Formulario} alt="chica escuchando musica " />
         </aside>
       )}
     </main>

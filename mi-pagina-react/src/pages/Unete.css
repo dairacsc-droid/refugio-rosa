@@ -42,21 +42,7 @@ body {
 
 .decoracion img {
   width: 100%;
-  max-width: 400px;
-  filter: drop-shadow(0 5px 15px rgba(231, 84, 128, 0.3));
-  animation: flotar 4s ease-in-out infinite;
-}
-
-@keyframes flotar {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  max-width: 800px;
 }
 
 /* Cards */
@@ -194,7 +180,7 @@ button:hover {
     flex-direction: column; /* apilar elementos */
     align-items: center; /* centrar horizontalmente */
     justify-content: flex-start; /* no centrar vertical para tablet */
-    padding: 20px; /* más compacto */
+    padding: 150px; /* más compacto */
     margin: 0 auto; /* eliminar margen grande de escritorio */
     gap: 20px; /* reducir separación */
     width: 100%;
@@ -227,7 +213,9 @@ button:hover {
 /* Móvil pequeño */
 @media (max-width: 600px) {
   .layout {
-    padding: 15px;
+    padding: 20px;
+    padding-bottom: 60px;
+    padding-top: 60px;
     gap: 15px;
   }
 
@@ -248,5 +236,21 @@ button:hover {
   .avatar img {
     width: 100px;
     height: 100px;
+  }
+}
+/* Ajuste de espacio en vista de perfil para tablet y móvil */
+@media (max-width: 1024px) {
+  .layout.perfil-activo {
+    min-height: auto; /* elimina el alto forzado */
+    padding-top: 125px; /* un pequeño margen visual */
+    padding-bottom: 125px;
+    justify-content: flex-start; /* evita que se centre demasiado */
+  }
+}
+
+@media (max-width: 600px) {
+  .layout.perfil-activo {
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 }
