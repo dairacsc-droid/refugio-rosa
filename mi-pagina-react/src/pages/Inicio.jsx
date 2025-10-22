@@ -1,21 +1,24 @@
 import { useState, useEffect } from "react";
 import "./Inicio.css";
+import mood1 from "../assets/moodboard/mood1.jpg"
+import mood2 from "../assets/moodboard/mood2.jpg"
+import mood3 from "../assets/moodboard/mood3.jpg"
 import yei from "../assets/nosotras/yei.jpg";
 import mari from "../assets/nosotras/mari.jpg";
 
 function Inicio() {
   const slidesData = [
     {
-      img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800",
-      text: "We Implement Your Delicious Dreams...",
+      img: mood1 ,
+      
     },
     {
-      img: "https://images.unsplash.com/photo-1565958011705-44e211f0464a?w=800",
-      text: "Made For You With Love",
+      img: mood2 ,
+      
     },
     {
-      img: "https://images.unsplash.com/photo-1606313564200-1f6a6ec96741?w=800",
-      text: "Sweet Moments, Sweet Memories",
+      img: mood3,
+    
     },
   ];
 

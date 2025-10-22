@@ -91,7 +91,7 @@ function Unete() {
       </section>
 
       {fase === "perfil" && (
-        <section className="card perfil ">
+        <section className="card perfil mb-3">
           <h2>💗 Bienvenida a tu perfil</h2>
           <div className="avatar">
             <img src={avatarUrl} alt="Avatar" />
