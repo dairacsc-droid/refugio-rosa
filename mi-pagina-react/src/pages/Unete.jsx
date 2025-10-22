@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Unete.css";
+import Formulario from "../assets/formulario/formulario.jpg";
 
 function Unete() {
   const [fase, setFase] = useState("formBasico");
@@ -90,8 +91,9 @@ function Unete() {
         )}
       </section>
 
-      {fase === "perfil" && (
-        <section className="card perfil mb-3">
+      {fase === "perfil" ? (
+        <section className="card perfil">
+
           <h2>💗 Bienvenida a tu perfil</h2>
           <div className="avatar">
             <img src={avatarUrl} alt="Avatar" />
@@ -110,14 +112,9 @@ function Unete() {
           </p>
           <p className="descripcion">{descripcion || "Sin descripción."}</p>
         </section>
-      )}
-
-      {fase !== "perfil" && (
+      ) : (
         <aside className="decoracion">
-          <img
-            src="https://cdn.pixabay.com/photo/2022/05/17/12/12/flowers-7201391_1280.png"
-            alt="Decoración floral rosada"
-          />
+          <img src={Formulario} alt="chica escuchando musica" />
         </aside>
       )}
     </main>

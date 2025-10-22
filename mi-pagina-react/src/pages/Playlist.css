@@ -17,8 +17,8 @@ body {
 }
 
 .player-wrap {
-  margin: 20px;
-  background: linear-gradient(-100deg, rgba(250, 169, 187, 0.7), var(--card));
+  margin: 35px;
+  background: rgb(248, 211, 222);
   border-radius: 22px;
   padding: 20px;
   box-shadow: 0 18px 40px rgba(252, 37, 137, 0.08);
@@ -221,7 +221,7 @@ body {
 }
 
 .track-item.active {
-  border-color: rgba(159, 200, 217, 0.45);
+  border-color: #f06292;
   box-shadow: 0 8px 22px rgba(18, 40, 60, 0.06);
 }
 
@@ -263,8 +263,8 @@ body {
   padding: 14px 18px;
   border-radius: 30px;
   border: none;
-  background: #eaf3f7;
-  color: var(--text);
+  background: #ffb5c8;
+  color: #f06292;
   box-shadow: 0 8px 18px rgba(18, 40, 60, 0.04);
   outline: none;
   font-size: 1rem;
@@ -276,7 +276,7 @@ body {
   width: 40px;
   height: 40px;
   border: none;
-  background: var(--card);
+
   box-shadow: 0 6px 14px rgba(18, 40, 60, 0.04);
   cursor: pointer;
 }
@@ -290,6 +290,7 @@ body {
   .vinyl {
     width: 260px;
     height: 260px;
+    padding-right: 0;
   }
 
   .track-title {
