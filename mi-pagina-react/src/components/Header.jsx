@@ -34,7 +34,10 @@ function Header() {
             <Link to="/playlist">Playlist</Link>
           </li>
           <li>
-            <Link to="/unete">Unete</Link>
+            <Link to="/login">Iniciar Sesion</Link>
+          </li>
+          <li>
+            <Link to="/registrarse">Registrate</Link>
           </li>
         </ul>
       </nav>
