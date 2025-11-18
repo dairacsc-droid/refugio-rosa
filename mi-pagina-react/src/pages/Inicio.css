@@ -100,7 +100,7 @@
 }
 
 .card {
-  background: #f9c5d1;
+  background: #f9c5d170;
   border-radius: 20px;
   padding: 25px;
   width: 400px;
@@ -109,7 +109,7 @@
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(31, 30, 30, 0.226);
 }
 
 .card img {
@@ -187,6 +187,7 @@
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f9c5d194;
 }
 
 .caracteristica:hover {
