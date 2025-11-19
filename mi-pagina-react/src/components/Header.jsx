@@ -1,7 +1,27 @@
 import { Link, NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import "./Header.css";
 
 function Header() {
+  const [usuario, setUsuario] = useState(null);
+
+  useEffect(() => {
+    const auth = getAuth();
+
+    // Detectar si hay usuario logueado
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUsuario(user);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  const cerrarSesion = async () => {
+    const auth = getAuth();
+    await signOut(auth);
+  };
+
   return (
     <header>
       <div className="logo">
@@ -15,6 +35,7 @@ function Header() {
         <label htmlFor="menu-toggle" className="hamburger">
           ☰
         </label>
+
         <ul className="nav-links">
           <li>
             <NavLink
@@ -24,21 +45,43 @@ function Header() {
               Inicio
             </NavLink>
           </li>
+
           <li>
             <Link to="/chat">Chat</Link>
           </li>
+
           <li>
             <Link to="/autocuidado">Autocuidado</Link>
           </li>
+
           <li>
             <Link to="/playlist">Playlist</Link>
           </li>
-          <li>
-            <Link to="/login">Iniciar Sesion</Link>
-          </li>
-          <li>
-            <Link to="/registrarse">Registrate</Link>
-          </li>
+
+          {/* SI HAY USUARIO → NAVBAR DE USUARIO */}
+          {usuario ? (
+            <>
+              <li className="text-rose-600 font-semibold">
+                Hola, {usuario.email}
+              </li>
+
+              <li>
+                <button onClick={cerrarSesion} className="logout-btn">
+                  Cerrar sesión
+                </button>
+              </li>
+            </>
+          ) : (
+            /* SI NO HAY USUARIO → NAVBAR DE VISITANTE */
+            <>
+              <li>
+                <Link to="/login">Iniciar Sesión</Link>
+              </li>
+              <li>
+                <Link to="/registrarse">Regístrate</Link>
+              </li>
+            </>
+          )}
         </ul>
       </nav>
     </header>
