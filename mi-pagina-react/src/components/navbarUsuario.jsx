@@ -36,7 +36,9 @@ function NavbarUsuario() {
                          <li>
                            <Link to="/playlist">Playlist</Link>
                          </li>
-                        
+                          <li>
+                           <Link to="/perfil">Perfil</Link>
+                         </li>
                          <li>
                            <Link to="/">Cerrar Sesion</Link>
                          </li>

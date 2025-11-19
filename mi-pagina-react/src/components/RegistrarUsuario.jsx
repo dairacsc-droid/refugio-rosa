@@ -26,6 +26,18 @@ function RegistrarUsuario({OnRegister, cambiarVista}){
     
   });
  }
+const [usuarioRegistrado, setUsuarioRegistrado] = useState(null);
+
+<RegistrarUsuario OnRegister={(user) => {
+  setUsuarioRegistrado({
+    name: name, 
+    apodo: apodo,
+    email: user.email,
+    descripcion: "", // opcional, luego puedes agregar textarea
+  });
+}} />
+
+{usuarioRegistrado && <PerfilUsuario usuarioData={usuarioRegistrado} />}
 
     return  (
   <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-100 via-rose-100 to-white p-6">

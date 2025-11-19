@@ -58,7 +58,12 @@ function Header() {
             <Link to="/playlist">Playlist</Link>
           </li>
 
-          {/* SI HAY USUARIO → NAVBAR DE USUARIO */}
+          {usuario && (
+  <li>
+    <Link to="/perfil">Perfil</Link>
+  </li>
+)}
+
           {usuario ? (
             <>
               <li className="text-rose-600 font-semibold">
@@ -72,7 +77,7 @@ function Header() {
               </li>
             </>
           ) : (
-            /* SI NO HAY USUARIO → NAVBAR DE VISITANTE */
+            
             <>
               <li>
                 <Link to="/login">Iniciar Sesión</Link>
