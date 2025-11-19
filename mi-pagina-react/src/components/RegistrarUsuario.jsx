@@ -33,6 +33,7 @@ function RegistrarUsuario({OnRegister, cambiarVista}){
       <h1 className="text-3xl font-bold text-pink-600 text-center mb-6">
         Registrar Usuario
       </h1>
+      <label className="block text-sm font-medium text-gray-700 mb-1">Nombre completo</label>
        <input
         className="w-full p-3 border border-pink-300 rounded-xl focus:ring-2 focus:ring-pink-400 focus:outline-none"
         type="name"
@@ -40,6 +41,7 @@ function RegistrarUsuario({OnRegister, cambiarVista}){
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
+      <label className="block text-sm font-medium text-gray-700 mb-1">Alias</label>
       <input
         className="w-full p-3 border border-pink-300 rounded-xl focus:ring-2 focus:ring-pink-400 focus:outline-none"
         type="name"
@@ -47,7 +49,7 @@ function RegistrarUsuario({OnRegister, cambiarVista}){
         value={apodo}
         onChange={(e) => setApodo(e.target.value)}
       />
-
+      <label className="block text-sm font-medium text-gray-700 mb-1">Correo Electronico</label>
       <input
         className="w-full p-3 border border-pink-300 rounded-xl focus:ring-2 focus:ring-pink-400 focus:outline-none"
         type="email"
@@ -55,7 +57,7 @@ function RegistrarUsuario({OnRegister, cambiarVista}){
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-
+      <label className="block text-sm font-medium text-gray-700 mb-1">Contraseña</label>
       <input
         className="w-full p-3 border border-pink-300 rounded-xl focus:ring-2 focus:ring-pink-400 focus:outline-none"
         type="password"
@@ -74,7 +76,7 @@ function RegistrarUsuario({OnRegister, cambiarVista}){
       <div className="text-center mt-4">
         <p className="text-gray-600 text-sm">¿Ya tienes una cuenta?</p>
         <button
-          className="text-pink-500 hover:underline font-semibold mt-1"
+          className="text-white hover:underline font-semibold mt-1"
         
         >
           Iniciar sesión

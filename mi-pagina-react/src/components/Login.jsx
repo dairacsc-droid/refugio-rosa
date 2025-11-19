@@ -80,7 +80,7 @@ function Login({onLogin, cambiarVista}) {
         </button>
 
         <button
-          className="w-full mt-2 bg-white border border-pink-300 hover:bg-pink-50 text-pink-600 font-medium py-3 rounded-xl shadow-sm transition duration-200"
+          className="w-full mt-2 bg-white border border-pink-700 hover:bg-pink-50 text-pink-600 font-medium py-3 rounded-xl shadow-sm transition duration-200"
           onClick={iniciarSesionGoogle}
         >
           Iniciar sesión con Google
@@ -89,7 +89,7 @@ function Login({onLogin, cambiarVista}) {
         <div className="text-center mt-4">
           <p className="text-gray-600 text-sm">¿No tienes una cuenta?</p>
           <button
-            className="text-pink-500 hover:underline font-semibold mt-1"
+            className="text-white hover:underline font-semibold mt-1"
            
           >
             Crear cuenta
