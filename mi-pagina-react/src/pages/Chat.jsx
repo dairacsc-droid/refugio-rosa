@@ -1,27 +1,78 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { db, auth } from "../firebase";
+import { serverTimestamp } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  onSnapshot,
+  deleteDoc,
+  doc,
+  query,
+  orderBy
+} from "firebase/firestore";
+import { onAuthStateChanged } from "firebase/auth";
+
 import "./Chat.css";
 
 function Chat() {
   const [mensaje, setMensaje] = useState("");
   const [mensajes, setMensajes] = useState([]);
+  const [usuarioActual, setUsuarioActual] = useState(null);
 
-  const enviarMensaje = (e) => {
-    e.preventDefault();
-    if (!mensaje.trim()) return;
+useEffect(() => {
+  const unsubscribe = onAuthStateChanged(auth, (user) => {
+    setUsuarioActual(user);
+  });
 
-    const nuevoMensaje = {
-      id: Date.now(),
-      texto: mensaje,
-      autor: "Anónima 🌷",
-      hora: new Date().toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-      }),
-    };
+  return () => unsubscribe();
+}, []);
 
-    setMensajes([...mensajes, nuevoMensaje]);
+   useEffect(() => {
+    const q = query(collection(db, "mensajes"), orderBy("hora"));
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const mensajesFirestore = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setMensajes(mensajesFirestore);
+    });
+
+    return () => unsubscribe(); 
+  }, []);
+
+  const enviarMensaje = async (e) => {
+  e.preventDefault();
+
+  if (!auth.currentUser) {
+    alert("Debes iniciar sesión para enviar mensajes 😥");
+    return;
+  }
+
+  if (!mensaje.trim()) return;
+
+  try {
+   await addDoc(collection(db, "mensajes"), {
+  texto: mensaje,
+  autor: auth.currentUser.email,
+  hora: new Date().toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  }),
+});
+
+
+    setMensaje("");
+  } catch (error) {
+    console.error("Error al enviar mensaje:", error);
+  }
+
+
+    
     setMensaje("");
   };
+  const eliminarMensaje = async (id) => {
+    await deleteDoc (doc(db, "mensajes", id));
+  }
 
   return (
     <main className="chat-container">
@@ -40,9 +91,20 @@ function Chat() {
             mensajes.map((msg) => (
               <div key={msg.id} className="mensaje">
                 <div className="mensaje-header">
-                  <span className="autor">{msg.autor}</span>
-                  <span className="hora">{msg.hora}</span>
-                </div>
+  <span className="autor">{msg.autor}</span>
+  <span className="hora">
+  {typeof msg.hora === "string"
+    ? msg.hora
+    : ""}
+</span>
+
+  {usuarioActual?.email === msg.autor && (
+  <button className="btn-x" onClick={() => eliminarMensaje(msg.id)}>×</button>
+)}
+
+
+</div>
+
                 <p className="texto">{msg.texto}</p>
               </div>
             ))

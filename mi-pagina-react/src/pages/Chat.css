@@ -142,3 +142,24 @@
 .mensajes::-webkit-scrollbar-track {
   background-color: #fffafc;
 }
+.btn-x {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: none;
+  background-color: #f2a2b8;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-x:hover {
+  background-color: #ff5e7a;
+  transform: scale(1.1);
+}
