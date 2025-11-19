@@ -8,7 +8,7 @@ import {
   deleteDoc,
   doc,
   query,
-  orderBy
+  orderBy,
 } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 
@@ -19,15 +19,15 @@ function Chat() {
   const [mensajes, setMensajes] = useState([]);
   const [usuarioActual, setUsuarioActual] = useState(null);
 
-useEffect(() => {
-  const unsubscribe = onAuthStateChanged(auth, (user) => {
-    setUsuarioActual(user);
-  });
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUsuarioActual(user);
+    });
 
-  return () => unsubscribe();
-}, []);
+    return () => unsubscribe();
+  }, []);
 
-   useEffect(() => {
+  useEffect(() => {
     const q = query(collection(db, "mensajes"), orderBy("hora"));
     const unsubscribe = onSnapshot(q, (snapshot) => {
       const mensajesFirestore = snapshot.docs.map((doc) => ({
@@ -37,49 +37,46 @@ useEffect(() => {
       setMensajes(mensajesFirestore);
     });
 
-    return () => unsubscribe(); 
+    return () => unsubscribe();
   }, []);
 
   const enviarMensaje = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (!auth.currentUser) {
-    alert("Debes iniciar sesión para enviar mensajes 😥");
-    return;
-  }
+    if (!auth.currentUser) {
+      alert("Debes iniciar sesión para enviar mensajes.");
+      return;
+    }
 
-  if (!mensaje.trim()) return;
+    if (!mensaje.trim()) return;
 
-  try {
-   await addDoc(collection(db, "mensajes"), {
-  texto: mensaje,
-  autor: auth.currentUser.email,
-  hora: new Date().toLocaleTimeString([], {
-    hour: "2-digit",
-    minute: "2-digit",
-  }),
-});
+    try {
+      await addDoc(collection(db, "mensajes"), {
+        texto: mensaje,
+        autor: auth.currentUser.email,
+        hora: new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
+      });
 
+      setMensaje("");
+    } catch (error) {
+      console.error("Error al enviar mensaje:", error);
+    }
 
-    setMensaje("");
-  } catch (error) {
-    console.error("Error al enviar mensaje:", error);
-  }
-
-
-    
     setMensaje("");
   };
   const eliminarMensaje = async (id) => {
-    await deleteDoc (doc(db, "mensajes", id));
-  }
+    await deleteDoc(doc(db, "mensajes", id));
+  };
 
   return (
     <main className="chat-container">
       <section className="chat-box">
         <h2>💬 Chat de la Comunidad</h2>
         <p className="chat-descripcion">
-          Un espacio seguro para compartir tus pensamientos, ideas y ánimos 💖
+          Un espacio seguro para compartir tus pensamientos, ideas y ánimos.
         </p>
 
         <div className="mensajes">
@@ -91,19 +88,20 @@ useEffect(() => {
             mensajes.map((msg) => (
               <div key={msg.id} className="mensaje">
                 <div className="mensaje-header">
-  <span className="autor">{msg.autor}</span>
-  <span className="hora">
-  {typeof msg.hora === "string"
-    ? msg.hora
-    : ""}
-</span>
+                  <span className="autor">{msg.autor}</span>
+                  <span className="hora">
+                    {typeof msg.hora === "string" ? msg.hora : ""}
+                  </span>
 
-  {usuarioActual?.email === msg.autor && (
-  <button className="btn-x" onClick={() => eliminarMensaje(msg.id)}>×</button>
-)}
-
-
-</div>
+                  {usuarioActual?.email === msg.autor && (
+                    <button
+                      className="btn-x"
+                      onClick={() => eliminarMensaje(msg.id)}
+                    >
+                      ×
+                    </button>
+                  )}
+                </div>
 
                 <p className="texto">{msg.texto}</p>
               </div>
