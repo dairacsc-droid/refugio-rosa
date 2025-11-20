@@ -63,6 +63,38 @@ function navbarUsuario() {
       </nav>
     </header>
   );
+  return (
+    <header>
+      <div className="logo">
+        <h1>
+          Refugio<span>Rosa</span>
+        </h1>
+      </div>
+      <nav>
+        <input type="checkbox" id="menu-toggle" />
+        <label htmlFor="menu-toggle" className="hamburger">
+          ☰
+        </label>
+        <ul className="nav-links">
+          <li>
+            <Link to="/chat">Chat</Link>
+          </li>
+          <li>
+            <Link to="/autocuidado">Autocuidado</Link>
+          </li>
+          <li>
+            <Link to="/playlist">Playlist</Link>
+          </li>
+          <li>
+            <Link to="/perfil">Perfil</Link>
+          </li>
+          <li>
+            <Link to="/">Cerrar Sesion</Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
 }
 
 export default navbarUsuario;

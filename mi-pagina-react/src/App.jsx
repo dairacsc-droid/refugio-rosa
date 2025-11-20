@@ -1,3 +1,4 @@
+import React, {useState} from "react";
 import { Routes, Route } from "react-router-dom";
 import app from "./firebase";
 import { getAuth, signOut } from "firebase/auth";
@@ -11,6 +12,7 @@ import Playlist from "./pages/Playlist";
 import RegistrarUsuario from "./components/RegistrarUsuario";
 import Login from "./components/Login";
 function App() {
+  const [usuarioRegistrado, setUsuarioRegistrado] = useState(null);
   return (
     <>
       <Header />
@@ -20,17 +22,29 @@ function App() {
         <Route path="/autocuidado" element={<Autocuidado />} />
         <Route path="/playlist" element={<Playlist />} />
         <Route
-          path="/prueba"
+          path="/perfil"
           element={
             <>
-              <Login />
-              <RegistrarUsuario />
+              {!usuarioRegistrado ? (
+                <Unete usuarioData={usuarioRegistrado} />
+              ) : (
+                
+                <RegistrarUsuario
+                  OnRegister={(userData) => setUsuarioRegistrado(userData)}
+                />
+              )}
             </>
           }
         />
 
         <Route path="/login" element={<Login />} />
-        <Route path="/registrarse" element={<RegistrarUsuario />} />
+        <Route path="/registrarse" element={ !usuarioRegistrado ? (
+              <RegistrarUsuario
+                OnRegister={(userData) => setUsuarioRegistrado(userData)}
+              />
+            ) : (
+              <Unete usuarioData={usuarioRegistrado} />
+            )} />
       </Routes>
       <Footer></Footer>
     </>
