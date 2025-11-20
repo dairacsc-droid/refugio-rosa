@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./Unete.css";
 
-function Unete({ usuarioData }) {
+
+function Perfil({ usuarioData }) {
   const [avatarUrl, setAvatarUrl] = useState("");
 
   const avatares = [
@@ -48,4 +48,4 @@ function Unete({ usuarioData }) {
   );
 }
 
-export default Unete;
+export default Perfil;

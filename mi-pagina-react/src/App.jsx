@@ -8,7 +8,7 @@ import Inicio from "./pages/Inicio";
 import Chat from "./pages/Chat";
 import Autocuidado from "./pages/Autocuidado";
 import Playlist from "./pages/Playlist";
-//import Perfil from "./pages/Perfil";
+import Perfil from "./pages/Perfil";
 import RegistrarUsuario from "./components/RegistrarUsuario";
 import Login from "./components/Login";
 function App() {
@@ -26,7 +26,7 @@ function App() {
           element={
             <>
               {!usuarioRegistrado ? (
-                <Unete usuarioData={usuarioRegistrado} />
+                <Perfil usuarioData={usuarioRegistrado} />
               ) : (
                 <RegistrarUsuario
                   OnRegister={(userData) => setUsuarioRegistrado(userData)}
