@@ -8,6 +8,7 @@ import Inicio from "./pages/Inicio";
 import Chat from "./pages/Chat";
 import Autocuidado from "./pages/Autocuidado";
 import Playlist from "./pages/Playlist";
+//import Unete from "./pages/Unete";
 import RegistrarUsuario from "./components/RegistrarUsuario";
 import Login from "./components/Login";
 function App() {
@@ -44,7 +45,7 @@ function App() {
                 OnRegister={(userData) => setUsuarioRegistrado(userData)}
               />
             ) : (
-              <navbarUsuario usuarioData={usuarioRegistrado} />
+              <Unete usuarioData={usuarioRegistrado} />
             )
           }
         />
