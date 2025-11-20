@@ -21,7 +21,7 @@ function Footer() {
           </h3>
           <ul className="space-y-2 text-rose-600">
             <li>
-              <a href="#" className="hover:text-rose-500 transition">
+              <a href="/" className="hover:text-rose-500 transition">
                 Inicio
               </a>
             </li>
@@ -35,10 +35,10 @@ function Footer() {
                 Chat
               </a>
             </li>
-            
+
             <li>
               <a href="#" className="hover:text-rose-500 transition">
-                Unete
+                Autocuidado
               </a>
             </li>
           </ul>

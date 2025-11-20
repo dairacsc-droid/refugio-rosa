@@ -9,9 +9,13 @@ function Header() {
   useEffect(() => {
     const auth = getAuth();
 
-    // Detectar si hay usuario logueado
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setUsuario(user);
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        await user.reload(); // Asegura que displayName esté actualizado
+        setUsuario({ ...user });
+      } else {
+        setUsuario(null);
+      }
     });
 
     return () => unsubscribe();
@@ -20,7 +24,15 @@ function Header() {
   const cerrarSesion = async () => {
     const auth = getAuth();
     await signOut(auth);
+    cerrarMenu(); // Cerrar hamburguesa al salir
   };
+
+  const cerrarMenu = () => {
+    const checkbox = document.getElementById("menu-toggle");
+    if (checkbox) checkbox.checked = false;
+  };
+
+  const nombreMostrado = usuario?.displayName || "Usuario";
 
   return (
     <header>
@@ -37,7 +49,7 @@ function Header() {
         </label>
 
         <ul className="nav-links">
-          <li>
+          <li onClick={cerrarMenu}>
             <NavLink
               to="/"
               className={({ isActive }) => (isActive ? "active" : "")}
@@ -46,28 +58,28 @@ function Header() {
             </NavLink>
           </li>
 
-          <li>
+          <li onClick={cerrarMenu}>
             <Link to="/chat">Chat</Link>
           </li>
 
-          <li>
+          <li onClick={cerrarMenu}>
             <Link to="/autocuidado">Autocuidado</Link>
           </li>
 
-          <li>
+          <li onClick={cerrarMenu}>
             <Link to="/playlist">Playlist</Link>
           </li>
 
           {usuario && (
-  <li>
-    <Link to="/perfil">Perfil</Link>
-  </li>
-)}
+            <li onClick={cerrarMenu}>
+              <Link to="/perfil">Perfil</Link>
+            </li>
+          )}
 
           {usuario ? (
             <>
               <li className="text-rose-600 font-semibold">
-                Hola, {usuario.email}
+                Hola, {nombreMostrado}
               </li>
 
               <li>
@@ -77,12 +89,11 @@ function Header() {
               </li>
             </>
           ) : (
-            
             <>
-              <li>
+              <li onClick={cerrarMenu}>
                 <Link to="/login">Iniciar Sesión</Link>
               </li>
-              <li>
+              <li onClick={cerrarMenu}>
                 <Link to="/registrarse">Regístrate</Link>
               </li>
             </>
