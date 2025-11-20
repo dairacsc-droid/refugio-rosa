@@ -53,7 +53,7 @@ function Chat() {
     try {
       await addDoc(collection(db, "mensajes"), {
         texto: mensaje,
-        autor: auth.currentUser.email,
+        autor: auth.currentUser.displayName || auth.currentUser.email,
         hora: new Date().toLocaleTimeString([], {
           hour: "2-digit",
           minute: "2-digit",
@@ -93,7 +93,7 @@ function Chat() {
                     {typeof msg.hora === "string" ? msg.hora : ""}
                   </span>
 
-                  {usuarioActual?.email === msg.autor && (
+                  {usuarioActual?.displayName === msg.autor && (
                     <button
                       className="btn-x"
                       onClick={() => eliminarMensaje(msg.id)}
