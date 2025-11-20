@@ -45,7 +45,7 @@ function App() {
                 OnRegister={(userData) => setUsuarioRegistrado(userData)}
               />
             ) : (
-              <navbarUsuario usuarioData={usuarioRegistrado} />
+              <Unete usuarioData={usuarioRegistrado} />
             )
           }
         />

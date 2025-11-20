@@ -35,7 +35,7 @@ function Footer() {
                 Chat
               </a>
             </li>
-            
+
             <li>
               <a href="#" className="hover:text-rose-500 transition">
                 Autocuidado
