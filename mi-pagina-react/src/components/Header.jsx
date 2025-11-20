@@ -11,7 +11,7 @@ function Header() {
 
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
-        await user.reload(); // Asegura que displayName esté actualizado
+        await user.reload(); 
         setUsuario({ ...user });
       } else {
         setUsuario(null);

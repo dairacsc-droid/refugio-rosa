@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Routes, Route } from "react-router-dom";
-import app from "./firebase";
-import { getAuth, signOut } from "firebase/auth";
+import React, { useState, useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Inicio from "./pages/Inicio";
@@ -11,46 +11,49 @@ import Playlist from "./pages/Playlist";
 import Perfil from "./pages/Perfil";
 import RegistrarUsuario from "./components/RegistrarUsuario";
 import Login from "./components/Login";
+
 function App() {
   const [usuarioRegistrado, setUsuarioRegistrado] = useState(null);
+  const navigate = useNavigate();
+  const auth = getAuth();
+
+  // Detecta cambios de autenticación y redirige al perfil si inicia sesión
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUsuarioRegistrado(user);
+        navigate("/perfil");
+      } else {
+        setUsuarioRegistrado(null);
+      }
+    });
+    return () => unsubscribe();
+  }, [auth, navigate]);
+
   return (
     <>
-      <Header />
+      <Header usuario={usuarioRegistrado} />
       <Routes>
         <Route path="/" element={<Inicio />} />
-        <Route path="/chat" element={<Chat />} />
+        <Route path="/chat" element={<Chat usuario={usuarioRegistrado} />} />
         <Route path="/autocuidado" element={<Autocuidado />} />
         <Route path="/playlist" element={<Playlist />} />
         <Route
           path="/perfil"
-          element={
-            <>
-              {!usuarioRegistrado ? (
-                <Perfil usuarioData={usuarioRegistrado} />
-              ) : (
-                <RegistrarUsuario
-                  OnRegister={(userData) => setUsuarioRegistrado(userData)}
-                />
-              )}
-            </>
-          }
+          element={<Perfil usuarioData={usuarioRegistrado} />}
         />
-
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/login"
+          element={<Login OnLogin={(userData) => setUsuarioRegistrado(userData)} />}
+        />
         <Route
           path="/registrarse"
           element={
-            !usuarioRegistrado ? (
-              <RegistrarUsuario
-                OnRegister={(userData) => setUsuarioRegistrado(userData)}
-              />
-            ) : (
-              <Unete usuarioData={usuarioRegistrado} />
-            )
+            <RegistrarUsuario OnRegister={(userData) => setUsuarioRegistrado(userData)} />
           }
         />
       </Routes>
-      <Footer></Footer>
+      <Footer />
     </>
   );
 }
