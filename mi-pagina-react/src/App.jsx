@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import app from "./firebase";
 import { getAuth, signOut } from "firebase/auth";
@@ -8,7 +8,7 @@ import Inicio from "./pages/Inicio";
 import Chat from "./pages/Chat";
 import Autocuidado from "./pages/Autocuidado";
 import Playlist from "./pages/Playlist";
-import Perfil from "./pages/Perfil";
+//import Perfil from "./pages/Perfil";
 import RegistrarUsuario from "./components/RegistrarUsuario";
 import Login from "./components/Login";
 function App() {
@@ -28,7 +28,6 @@ function App() {
               {!usuarioRegistrado ? (
                 <Unete usuarioData={usuarioRegistrado} />
               ) : (
-                
                 <RegistrarUsuario
                   OnRegister={(userData) => setUsuarioRegistrado(userData)}
                 />
@@ -38,13 +37,18 @@ function App() {
         />
 
         <Route path="/login" element={<Login />} />
-        <Route path="/registrarse" element={ !usuarioRegistrado ? (
+        <Route
+          path="/registrarse"
+          element={
+            !usuarioRegistrado ? (
               <RegistrarUsuario
                 OnRegister={(userData) => setUsuarioRegistrado(userData)}
               />
             ) : (
-              <Perfil usuarioData={usuarioRegistrado} />
-            )} />
+              <navbarUsuario usuarioData={usuarioRegistrado} />
+            )
+          }
+        />
       </Routes>
       <Footer></Footer>
     </>

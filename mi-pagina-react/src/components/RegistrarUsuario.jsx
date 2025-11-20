@@ -13,35 +13,6 @@ function RegistrarUsuario({ OnRegister, cambiarVista }) {
 
   const registrar = async () => {
     const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed up 
-    const user = userCredential.user;
-    console.log("Cuenta creada con exito");
-    OnRegister(user)
-    
-    
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.log("Error al registrar el usuario");
-    console.log(error)
-    
-  });
- }
-const [usuarioRegistrado, setUsuarioRegistrado] = useState(null);
-
-<RegistrarUsuario OnRegister={(user) => {
-  setUsuarioRegistrado({
-    name: name, 
-    apodo: apodo,
-    email: user.email,
-    descripcion: "", // opcional, luego puedes agregar textarea
-  });
-}} />
-
-{usuarioRegistrado && <PerfilUsuario usuarioData={usuarioRegistrado} />}
 
     try {
       const userCredential = await createUserWithEmailAndPassword(
