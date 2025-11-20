@@ -2,14 +2,13 @@ import React, { useState, useRef, useEffect } from "react";
 import "../pages/Playlist.css";
 
 const Playlist = () => {
-  // Lista de canciones 🎶
-  const tracks = [
+  // Lista editable
+  const [tracks, setTracks] = useState([
     {
       title: "Addict",
       artist: "Silva Hound",
-      description:
-        "ADDICT™ es una canción compuesta por Silva Hound e interpretada por Michael Kovach (Angel Dust) y Kelly 'Chi-Chi' Boyer (Cherri Bomb).",
-      src: "/music/addict.mp3", // 🔊 cambia esta ruta a la tuya
+      description: "ADDICT™ es una canción compuesta por Silva Hound...",
+      src: "/music/addict.mp3",
     },
     {
       title: "Pink Venom",
@@ -23,26 +22,27 @@ const Playlist = () => {
       description: "Una explosión eléctrica de deseo, dulce y brillante.",
       src: "/music/electriclove.mp3",
     },
-  ];
+  ]);
 
-  // Estados
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
-  // Canción actual
+  // Refs para el formulario de nuevas canciones
+  const titleRef = useRef();
+  const artistRef = useRef();
+  const srcRef = useRef();
+
   const currentTrack = tracks[currentIndex];
 
-  // Efecto: cuando cambia la canción
+  // Actualiza audio al cambiar canción
   useEffect(() => {
-    if (isPlaying) {
-      audioRef.current.play();
-    } else {
-      audioRef.current.pause();
-    }
+    if (!audioRef.current) return;
+    if (isPlaying) audioRef.current.play();
+    else audioRef.current.pause();
   }, [isPlaying, currentIndex]);
 
-  // Controles
+  // Funciones control
   const handlePlayPause = () => setIsPlaying(!isPlaying);
 
   const handleNext = () => {
@@ -57,15 +57,44 @@ const Playlist = () => {
 
   const handleEnd = () => handleNext();
 
+  // Agregar canción
+  const addTrack = () => {
+    const newTrack = {
+      title: titleRef.current.value.trim(),
+      artist: artistRef.current.value.trim(),
+      description: "—",
+      src: srcRef.current.value.trim(),
+    };
+
+    if (!newTrack.title || !newTrack.artist || !newTrack.src) return;
+
+    setTracks((prev) => [...prev, newTrack]);
+
+    titleRef.current.value = "";
+    artistRef.current.value = "";
+    srcRef.current.value = "";
+  };
+
+  // Eliminar canción
+  const removeTrack = (index) => {
+    setTracks((prev) => prev.filter((_, i) => i !== index));
+
+    // Si eliminas la que está sonando, reajustamos
+    if (index === currentIndex) {
+      setCurrentIndex(0);
+      setIsPlaying(false);
+    }
+  };
+
   return (
-    <div className="player-wrap ">
+    <div className="player-wrap">
       <section className="player-body">
-        {/* 🎵 Izquierda: disco */}
+        {/* Disco */}
         <div className="left-col">
           <div className="vinyl-wrap">
             <div id="vinyl" className={`vinyl ${isPlaying ? "spin" : ""}`}>
               <div className="label">
-                <div className="label-text">{currentTrack.title}</div>
+                <div className="label-text">{currentTrack?.title}</div>
               </div>
             </div>
 
@@ -83,17 +112,14 @@ const Playlist = () => {
           </div>
         </div>
 
-        {/* 💿 Centro: info */}
+        {/* Info */}
         <div className="center-col">
-          <h1 className="track-title">{currentTrack.title}</h1>
-          <p className="artist">{currentTrack.artist}</p>
-          <div className="description">{currentTrack.description}</div>
-          <a href="#" className="read-more">
-            leer más..
-          </a>
+          <h1 className="track-title">{currentTrack?.title}</h1>
+          <p className="artist">{currentTrack?.artist}</p>
+          <div className="description">{currentTrack?.description}</div>
         </div>
 
-        {/* 📜 Derecha: playlist */}
+        {/* Playlist */}
         <aside className="right-col">
           <h3 className="playlist-title">Playlist</h3>
           <div className="playlist">
@@ -108,25 +134,43 @@ const Playlist = () => {
                   setIsPlaying(true);
                 }}
               >
-                <p className="track-name">{track.title}</p>
-                <p className="track-artist">{track.artist}</p>
+                <div className="track-meta">
+                  <p className="track-name">{track.title}</p>
+                  <p className="track-sub">{track.artist}</p>
+                </div>
+
+                <button
+                  className="delete-btn"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    removeTrack(index);
+                  }}
+                >
+                  🗑
+                </button>
               </div>
             ))}
           </div>
         </aside>
       </section>
 
-      {/* 🔍 Barra de búsqueda */}
+      {/* Barra de búsqueda */}
       <div className="search-bar">
-        <input
-          placeholder="🔍 presiona para buscar una canción"
-          onChange={(e) => console.log(e.target.value)}
-        />
+        <input placeholder="🔍 presiona para buscar una canción" />
         <button className="xbtn">✕</button>
       </div>
 
-      {/* 🎶 Reproductor real */}
-      <audio ref={audioRef} src={currentTrack.src} onEnded={handleEnd} />
+      {/* Formulario para añadir canciones */}
+      <div className="add-form">
+        <input ref={titleRef} placeholder="Título" />
+        <input ref={artistRef} placeholder="Artista" />
+        <input ref={srcRef} placeholder="URL del MP3" />
+        <button className="add-btn" onClick={addTrack}>
+          ➕ Añadir
+        </button>
+      </div>
+
+      <audio ref={audioRef} src={currentTrack?.src} onEnded={handleEnd} />
     </div>
   );
 };
