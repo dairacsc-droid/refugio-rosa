@@ -8,7 +8,7 @@ import Inicio from "./pages/Inicio";
 import Chat from "./pages/Chat";
 import Autocuidado from "./pages/Autocuidado";
 import Playlist from "./pages/Playlist";
-//import Unete from "./pages/Unete";
+import Perfil from "./pages/Perfil";
 import RegistrarUsuario from "./components/RegistrarUsuario";
 import Login from "./components/Login";
 function App() {
@@ -43,7 +43,7 @@ function App() {
                 OnRegister={(userData) => setUsuarioRegistrado(userData)}
               />
             ) : (
-              <Unete usuarioData={usuarioRegistrado} />
+              <Perfil usuarioData={usuarioRegistrado} />
             )} />
       </Routes>
       <Footer></Footer>
