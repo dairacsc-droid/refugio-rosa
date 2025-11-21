@@ -1,66 +1,66 @@
 import { useState, useEffect } from "react";
 import "./Inicio.css";
-import mood1 from "../assets/moodboard/mood1.jpg"
-import mood2 from "../assets/moodboard/mood2.jpg"
-import mood3 from "../assets/moodboard/mood3.jpg"
+import mood1 from "../assets/moodboard/mood1.jpg";
+import mood2 from "../assets/moodboard/mood2.jpg";
+import mood3 from "../assets/moodboard/mood3.jpg";
 import yei from "../assets/nosotras/yei.jpg";
 import mari from "../assets/nosotras/mari.jpg";
 
 function Inicio() {
   const slidesData = [
     {
-      img: mood1 ,
-      
+      img: mood1,
     },
     {
-      img: mood2 ,
-      
+      img: mood2,
     },
     {
       img: mood3,
-    
     },
   ];
 
   const [current, setCurrent] = useState(0);
   const totalSlides = slidesData.length;
 
-  // Funciones para Next y Prev
   const nextSlide = () => setCurrent((prev) => (prev + 1) % totalSlides);
   const prevSlide = () =>
     setCurrent((prev) => (prev - 1 + totalSlides) % totalSlides);
 
-  // Auto-slide cada 4 segundos
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % totalSlides);
     }, 4000);
 
-    return () => clearInterval(interval); // Limpieza al desmontar
+    return () => clearInterval(interval);
   }, [totalSlides]);
 
   return (
     <>
       <main>
         <section className="slider">
-          <div
-            className="slides"
-            style={{
-              transform: `translateX(-${current * 100}%)`,
-              transition: "transform 0.5s ease-in-out",
-            }}
-          >
-            {slidesData.map((slide, index) => (
-              <div
-                key={index}
-                className={`slide ${index === current ? "active" : ""}`}
-              >
-                <img src={slide.img} alt={`Cupcake ${index + 1}`} />
-                <div className="text">
-                  <h2>{slide.text}</h2>
+          <div className="slides-wrapper">
+            <div className="hero-text">
+              <h1>Bienvenida a tu pausa del mundo</h1>
+              <p>
+                Un espacio seguro para sentir, conversar y sanar poquito a
+                poquito
+              </p>
+            </div>
+
+            {/* CARRUSEL */}
+            <div
+              className="slides"
+              style={{
+                transform: `translateX(-${current * 100}%)`,
+                transition: "transform 0.5s ease-in-out",
+              }}
+            >
+              {slidesData.map((slide, index) => (
+                <div key={index} className="slide">
+                  <img src={slide.img} alt={`slide ${index + 1}`} />
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           <button className="prev" onClick={prevSlide}>
@@ -70,12 +70,13 @@ function Inicio() {
             &#10095;
           </button>
         </section>
+
         <section className="caracteristicas">
-          <h3 className="objetivos-container">Objetivos</h3>
+          <h3 className="objetivos-container">¿Qué encontrarás aquí?</h3>
 
           <div className="grid-cards">
             <div className="caracteristica">
-              <h6>✦ Espacio para desahogarse</h6>
+              <h6>✦ Un epacio para desahogarse</h6>
               <p>
                 Expresar lo que sentimos, lo bueno, lo malo, lo raro, todo vale.
               </p>
@@ -92,7 +93,7 @@ function Inicio() {
             </div>
 
             <div className="caracteristica">
-              <h6>✦ Crecemos juntas</h6>
+              <h6>✦ Crecer juntas</h6>
               <p>Un mal día jamás te define.</p>
             </div>
           </div>

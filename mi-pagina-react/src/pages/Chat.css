@@ -1,5 +1,5 @@
 .chat-container {
-  background: linear-gradient(90deg, #ffeef3 0%, #ffffff 50%, #ffeef3 100%);
+  background: rgb(252, 240, 240);
 
   min-height: 100vh;
   display: flex;
@@ -9,7 +9,6 @@
   box-sizing: border-box;
 }
 
-/* Caja principal */
 .chat-box {
   background: #fffafc;
   border-radius: 25px;

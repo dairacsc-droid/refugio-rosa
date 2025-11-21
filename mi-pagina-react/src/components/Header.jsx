@@ -11,7 +11,7 @@ function Header() {
 
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
-        await user.reload(); 
+        await user.reload();
         setUsuario({ ...user });
       } else {
         setUsuario(null);
@@ -83,7 +83,10 @@ function Header() {
               </li>
 
               <li>
-                <button onClick={cerrarSesion} className="logout-btn">
+                <button
+                  onClick={cerrarSesion}
+                  className="px-3 py-1 text-sm bg-rose-500 text-white rounded-md hover:bg-rose-600 transition"
+                >
                   Cerrar sesión
                 </button>
               </li>
