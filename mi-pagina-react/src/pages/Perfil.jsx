@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import "../pages/Perfil.css";
 
 function Perfil({ usuarioData }) {
   const [avatarUrl, setAvatarUrl] = useState("");
