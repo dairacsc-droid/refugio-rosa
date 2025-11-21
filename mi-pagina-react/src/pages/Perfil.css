@@ -1,229 +1,81 @@
-/* ===== Reset ===== */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: "Poppins", sans-serif;
-  background: white;
+.perfil-card {
+  width: 90%;
+  max-width: 450px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff0f7;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-.avatar {
+.perfil-avatar {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  align-items: center;
+  margin-bottom: 15px;
 }
-.avatar img {
+
+.perfil-avatar img {
   width: 120px;
   height: 120px;
+  border-radius: 100%;
+  object-fit: cover;
+  border: 3px solid #ff8cb7;
+  margin-bottom: 15px;
+}
+
+.avatar-selector {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.opcion-avatar {
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  border: 4px solid #f2a7b1;
-  object-fit: cover;
-  box-shadow: 0 4px 15px rgba(231, 84, 128, 0.3);
-} /* Perfil */
-.perfil {
-  text-align: center;
-  line-height: 1.8;
-  margin: 80px;
-  box-shadow: 0 8px 25px rgba(255, 192, 203, 0.4);
-}
-.perfil h2 {
-  color: #e75480;
-}
-.perfil p {
-  color: #555;
-  font-size: 1rem;
-}
-.perfil .descripcion {
-  font-style: italic;
-  background: #fffafc;
-  border-radius: 15px;
-  padding: 15px;
-  margin-top: 10px;
-  border: 1px solid #f2a7b1;
-}
-/* ===== Layout general ===== */
-.layout {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  background: white;
-}
-
-/* ===== Formulario ===== */
-.formularios {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-}
-
-.card {
-  background: white;
-  border-radius: 25px;
-  padding: 50px 60px;
-  width: 100%;
-  max-width: 550px;
-  box-shadow: 0 8px 25px rgba(255, 192, 203, 0.4);
-  border: 1px solid rgba(231, 84, 128, 0.15);
-}
-
-/* ===== Imagen lateral ===== */
-.decoracion {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 100%;
-}
-
-.decoracion img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
-/* ===== Inputs y botones ===== */
-label {
-  display: block;
-  font-weight: 500;
-  color: #444;
-  margin-bottom: 6px;
-}
-
-input,
-textarea {
-  width: 100%;
-  padding: 14px 16px;
-  border: 1px solid #f2a7b1;
-  border-radius: 12px;
-  margin-bottom: 18px;
-  font-size: 1rem;
-  background-color: #fffafc;
-  transition: border 0.3s, box-shadow 0.3s;
-}
-
-input:focus,
-textarea:focus {
-  border-color: #e75480;
-  box-shadow: 0 0 6px rgba(231, 84, 128, 0.3);
-}
-
-button {
-  width: 100%;
-  padding: 14px;
-  background-color: #e75480;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  border: 2px solid transparent;
+  transition: transform 0.2s, border-color 0.2s;
 }
 
-button:hover {
-  background-color: #d64b72;
-  transform: translateY(-2px);
+.opcion-avatar:hover {
+  transform: scale(1.1);
 }
 
-/* ===== PERFIL ACTIVO ===== */
-.layout.perfil-activo {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 0;
-  height: auto;
+.seleccionado {
+  border-color: #ff4f94;
 }
 
-.layout.perfil-activo .formularios,
-.layout.perfil-activo .decoracion {
+.upload-btn {
+  display: inline-block;
+  background: #ff8cb7;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.upload-btn input {
   display: none;
 }
 
-.layout.perfil-activo .perfil {
-  background: white;
-  border-radius: 20px;
-  padding: 40px;
-  text-align: center;
-  border: 1px solid rgba(231, 84, 128, 0.2);
-  width: 90%;
-  max-width: 500px;
+.favoritos-musica {
+  background: #ffe6ef;
+  padding: 10px;
+  border-radius: 12px;
 }
 
-/* ===== RESPONSIVIDAD ===== */
-
-/* Tablets grandes (mantiene diseño lado a lado) */
-@media (min-width: 1101px) {
-  .layout {
-    flex-direction: row;
-    height: 100vh;
-  }
-
-  .formularios {
-    padding: 40px;
-  }
-
-  .card {
-    max-width: 550px;
-  }
-
-  .decoracion {
-    display: flex;
-  }
+.song-item {
+  padding: 8px;
+  background: #fff;
+  margin: 5px 0;
+  border-radius: 10px;
 }
 
-/* iPad Pro, Air y móviles (elimina imagen y agranda formulario) */
-@media (max-width: 1100px) {
-  .layout {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .decoracion {
-    display: none !important;
-  }
-
-  .formularios {
-    width: 100%;
-    height: 100%;
-    padding: 0 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .card {
-    width: 100%;
-    max-width: 700px; /* Más grande en iPad */
-    padding: 50px 60px;
-  }
-}
-
-/* Celulares pequeños */
-@media (max-width: 768px) {
-  .formularios {
-    padding: 0 20px;
-  }
-
-  .card {
-    max-width: 90%;
-    padding: 35px 25px;
-  }
+.sin-musica {
+  color: #777;
 }

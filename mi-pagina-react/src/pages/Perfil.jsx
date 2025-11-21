@@ -1,34 +1,47 @@
 import React, { useState, useEffect } from "react";
 import "../pages/Perfil.css";
 
-function Perfil({ usuarioData }) {
-  const [avatarUrl, setAvatarUrl] = useState("");
+// IMPORTAR LAS IMÁGENES
+import flor from "../assets/perfiles/flor.png";
+import gatito from "../assets/perfiles/gatito.png";
+import hojita from "../assets/perfiles/hojita.png";
 
-  const avatares = [
-    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
-    "https://cdn.pixabay.com/photo/2017/01/31/21/23/avatar-2027361_1280.png",
-    "https://cdn.pixabay.com/photo/2016/08/20/05/38/avatar-1606916_1280.png",
-    "https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295401_1280.png",
-    "https://cdn.pixabay.com/photo/2013/07/13/12/46/avatar-159236_1280.png",
-  ];
+import luna from "../assets/perfiles/luna.png";
 
-  useEffect(() => {
-    if (usuarioData?.apodo) {
-      const index = usuarioData.apodo.length % avatares.length;
-      setAvatarUrl(avatares[index]);
+function Perfil({ usuarioData, playlistFavoritos = [] }) {
+  const [avatarUrl, setAvatarUrl] = useState(usuarioData?.avatar || "");
+
+  const avatares = [flor, gatito, hojita, , luna];
+
+  // Cambiar avatar cuando seleccionan uno
+  const manejarSeleccionAvatar = (url) => {
+    setAvatarUrl(url);
+  };
+
+  // Manejar subida de imagen personalizada
+  const manejarSubidaArchivo = (e) => {
+    const archivo = e.target.files[0];
+    if (archivo) {
+      const lector = new FileReader();
+      lector.onloadend = () => {
+        setAvatarUrl(lector.result);
+      };
+      lector.readAsDataURL(archivo);
     }
-  }, [usuarioData]);
+  };
 
   if (!usuarioData) return <p>Cargando perfil...</p>;
 
   return (
-    <section className="card perfil">
-      <h2>💗 Bienvenido a tu perfil</h2>
-      <div className="avatar">
+    <section className="perfil-card">
+      <h2>💗 Tu Perfil</h2>
+
+      <div className="perfil-avatar">
         <img src={avatarUrl} alt="Avatar" />
       </div>
+
       <p>
-        <strong>Nombre completo:</strong> {usuarioData.name}
+        <strong>Nombre:</strong> {usuarioData.name}
       </p>
       <p>
         <strong>Alias:</strong> {usuarioData.apodo}
@@ -36,14 +49,42 @@ function Perfil({ usuarioData }) {
       <p>
         <strong>Correo:</strong> {usuarioData.email}
       </p>
-      {usuarioData.descripcion && (
-        <>
-          <p>
-            <strong>Descripción:</strong>
-          </p>
-          <p className="descripcion">{usuarioData.descripcion}</p>
-        </>
-      )}
+
+      {/* Selector de avatar */}
+      <h3>Elige tu avatar</h3>
+      <div className="avatar-selector">
+        {avatares.map((img, i) => (
+          <img
+            key={i}
+            src={img}
+            alt="avatar opción"
+            className={`opcion-avatar ${
+              avatarUrl === img ? "seleccionado" : ""
+            }`}
+            onClick={() => manejarSeleccionAvatar(img)}
+          />
+        ))}
+      </div>
+
+      {/* Subir foto personalizada */}
+      <label className="upload-btn">
+        💗 Subir mi propia foto
+        <input type="file" accept="image/*" onChange={manejarSubidaArchivo} />
+      </label>
+
+      {/* Música favorita */}
+      <h3>🎵 Mis canciones favoritas</h3>
+      <div className="favoritos-musica">
+        {playlistFavoritos.length > 0 ? (
+          playlistFavoritos.map((song, index) => (
+            <div key={index} className="song-item">
+              <p>{song.titulo}</p>
+            </div>
+          ))
+        ) : (
+          <p className="sin-musica">Aún no tienes canciones guardadas 💗</p>
+        )}
+      </div>
     </section>
   );
 }
