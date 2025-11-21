@@ -14,21 +14,23 @@ import Login from "./components/Login";
 
 function App() {
   const [usuarioRegistrado, setUsuarioRegistrado] = useState(null);
-  const navigate = useNavigate();
-  const auth = getAuth();
+  const [redirigido, setRedirigido] = useState(false);
 
-  // Detecta cambios de autenticación y redirige al perfil si inicia sesión
+  const auth = getAuth(); // <<<< DEFINIMOS AUTH
+  const navigate = useNavigate(); // <<<< DEFINIMOS NAVIGATE
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUsuarioRegistrado(user);
+      setUsuarioRegistrado(user);
+
+      if (user && !redirigido) {
         navigate("/perfil");
-      } else {
-        setUsuarioRegistrado(null);
+        setRedirigido(true);
       }
     });
+
     return () => unsubscribe();
-  }, [auth, navigate]);
+  }, [auth, navigate, redirigido]);
 
   return (
     <>
@@ -44,12 +46,16 @@ function App() {
         />
         <Route
           path="/login"
-          element={<Login OnLogin={(userData) => setUsuarioRegistrado(userData)} />}
+          element={
+            <Login OnLogin={(userData) => setUsuarioRegistrado(userData)} />
+          }
         />
         <Route
           path="/registrarse"
           element={
-            <RegistrarUsuario OnRegister={(userData) => setUsuarioRegistrado(userData)} />
+            <RegistrarUsuario
+              OnRegister={(userData) => setUsuarioRegistrado(userData)}
+            />
           }
         />
       </Routes>
