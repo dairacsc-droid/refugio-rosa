@@ -1,36 +1,55 @@
 import React, { useState, useEffect } from "react";
 import "../pages/Perfil.css";
+import { db } from "../firebase";
+import { doc, updateDoc } from "firebase/firestore";
 
-// IMPORTAR LAS IMÁGENES
+// Importa tus imágenes de avatar
 import flor from "../assets/perfiles/flor.png";
 import gatito from "../assets/perfiles/gatito.png";
 import hojita from "../assets/perfiles/hojita.png";
-
 import luna from "../assets/perfiles/luna.png";
 
-function Perfil({ usuarioData, playlistFavoritos = [] }) {
-  const [avatarUrl, setAvatarUrl] = useState(usuarioData?.avatar || "");
+function Perfil({ usuarioData }) {
+  const [avatarUrl, setAvatarUrl] = useState("");
+  const [playlistFavoritos, setPlaylistFavoritos] = useState([]);
 
-  const avatares = [flor, gatito, hojita, , luna];
+  // Avatares disponibles
+  const avatares = [flor, gatito, hojita, luna];
 
-  // Cambiar avatar cuando seleccionan uno
-  const manejarSeleccionAvatar = (url) => {
+  // Cargar avatar y playlist al iniciar
+  useEffect(() => {
+    if (usuarioData) {
+      setAvatarUrl(usuarioData.avatar || flor); // si no tiene avatar, usar flor
+      setPlaylistFavoritos(usuarioData.playlistFavoritos || []);
+    }
+  }, [usuarioData]);
+
+  // Cambiar avatar seleccionado
+  const manejarSeleccionAvatar = async (url) => {
     setAvatarUrl(url);
-  };
-
-  // Manejar subida de imagen personalizada
-  const manejarSubidaArchivo = (e) => {
-    const archivo = e.target.files[0];
-    if (archivo) {
-      const lector = new FileReader();
-      lector.onloadend = () => {
-        setAvatarUrl(lector.result);
-      };
-      lector.readAsDataURL(archivo);
+    if (usuarioData?.uid) {
+      const userRef = doc(db, "users", usuarioData.uid);
+      await updateDoc(userRef, { avatar: url });
     }
   };
 
-  if (!usuarioData) return <p>Cargando perfil...</p>;
+  // Subir imagen propia
+  const manejarSubidaArchivo = async (e) => {
+    const archivo = e.target.files[0];
+    if (!archivo) return;
+
+    const lector = new FileReader();
+    lector.onloadend = async () => {
+      setAvatarUrl(lector.result);
+      if (usuarioData?.uid) {
+        const userRef = doc(db, "users", usuarioData.uid);
+        await updateDoc(userRef, { avatar: lector.result });
+      }
+    };
+    lector.readAsDataURL(archivo);
+  };
+
+  if (!usuarioData) return null; // no mostrar nada hasta que haya usuario
 
   return (
     <section className="perfil-card">
@@ -57,7 +76,7 @@ function Perfil({ usuarioData, playlistFavoritos = [] }) {
           <img
             key={i}
             src={img}
-            alt="avatar opción"
+            alt="Avatar opción"
             className={`opcion-avatar ${
               avatarUrl === img ? "seleccionado" : ""
             }`}
