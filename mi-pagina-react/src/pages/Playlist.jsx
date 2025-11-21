@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import "../pages/Playlist.css";
 
 const Playlist = () => {
-  // Lista editable
   const [tracks, setTracks] = useState([
     {
       title: "Addict",
@@ -24,25 +23,29 @@ const Playlist = () => {
     },
   ]);
 
+  const [search, setSearch] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef(null);
 
-  // Refs para el formulario de nuevas canciones
+  const audioRef = useRef(null);
   const titleRef = useRef();
   const artistRef = useRef();
   const srcRef = useRef();
 
   const currentTrack = tracks[currentIndex];
 
-  // Actualiza audio al cambiar canción
+  const filteredTracks = tracks.filter(
+    (track) =>
+      track.title.toLowerCase().includes(search.toLowerCase()) ||
+      track.artist.toLowerCase().includes(search.toLowerCase())
+  );
+
   useEffect(() => {
     if (!audioRef.current) return;
     if (isPlaying) audioRef.current.play();
     else audioRef.current.pause();
   }, [isPlaying, currentIndex]);
 
-  // Funciones control
   const handlePlayPause = () => setIsPlaying(!isPlaying);
 
   const handleNext = () => {
@@ -57,7 +60,6 @@ const Playlist = () => {
 
   const handleEnd = () => handleNext();
 
-  // Agregar canción
   const addTrack = () => {
     const newTrack = {
       title: titleRef.current.value.trim(),
@@ -75,11 +77,9 @@ const Playlist = () => {
     srcRef.current.value = "";
   };
 
-  // Eliminar canción
   const removeTrack = (index) => {
     setTracks((prev) => prev.filter((_, i) => i !== index));
 
-    // Si eliminas la que está sonando, reajustamos
     if (index === currentIndex) {
       setCurrentIndex(0);
       setIsPlaying(false);
@@ -122,45 +122,54 @@ const Playlist = () => {
         {/* Playlist */}
         <aside className="right-col">
           <h3 className="playlist-title">Playlist</h3>
-          <div className="playlist">
-            {tracks.map((track, index) => (
-              <div
-                key={index}
-                className={`track-item ${
-                  index === currentIndex ? "active" : ""
-                }`}
-                onClick={() => {
-                  setCurrentIndex(index);
-                  setIsPlaying(true);
-                }}
-              >
-                <div className="track-meta">
-                  <p className="track-name">{track.title}</p>
-                  <p className="track-sub">{track.artist}</p>
-                </div>
 
-                <button
-                  className="delete-btn"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    removeTrack(index);
+          <div className="playlist">
+            {filteredTracks.map((track) => {
+              const realIndex = tracks.indexOf(track);
+
+              return (
+                <div
+                  key={realIndex}
+                  className={`track-item ${
+                    realIndex === currentIndex ? "active" : ""
+                  }`}
+                  onClick={() => {
+                    setCurrentIndex(realIndex);
+                    setIsPlaying(true);
                   }}
                 >
-                  🗑
-                </button>
-              </div>
-            ))}
+                  <div className="track-meta">
+                    <p className="track-name">{track.title}</p>
+                    <p className="track-sub">{track.artist}</p>
+                  </div>
+
+                  <button
+                    className="delete-btn"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      removeTrack(realIndex);
+                    }}
+                  >
+                    🗑
+                  </button>
+                </div>
+              );
+            })}
           </div>
         </aside>
       </section>
 
-      {/* Barra de búsqueda */}
       <div className="search-bar">
-        <input placeholder="🔍 presiona para buscar una canción" />
-        <button className="xbtn">✕</button>
+        <input
+          placeholder="🔍 busca por título o artista"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <button className="xbtn" onClick={() => setSearch("")}>
+          ✕
+        </button>
       </div>
 
-      {/* Formulario para añadir canciones */}
       <div className="add-form">
         <input ref={titleRef} placeholder="Título" />
         <input ref={artistRef} placeholder="Artista" />

@@ -1,4 +1,3 @@
-/* Slider */
 .slider {
   position: relative;
   overflow: hidden;
@@ -60,11 +59,10 @@
   width: auto;
 }
 
-/* Services */
 .services {
   text-align: center;
   padding: 20px 20px;
-  background: #fff;
+  background: rgb(250, 230, 230);
 }
 .objetivos-container {
   text-align: center;
@@ -100,7 +98,9 @@
 }
 
 .card {
-  background: #f9c5d170;
+  background: #f0afbe70;
+  border-width: 2px;
+  border-color: rgb(252, 123, 187);
   border-radius: 20px;
   padding: 25px;
   width: 400px;
@@ -126,7 +126,6 @@
   border-radius: 15px;
 }
 
-/* Team */
 .team {
   background: #e25a87;
   color: #fff;
@@ -180,7 +179,7 @@
 }
 
 .caracteristica {
-  border: 2px solid #f4a8c1;
+  border: 2px solid rgb(252, 123, 187);
   border-radius: 12px;
   padding: 20px;
   background-color: #fff;
@@ -211,14 +210,12 @@
   display: none;
 }
 
-/* Icono menú */
 .hamburguesa {
   display: none;
   font-size: 28px;
   cursor: pointer;
 }
 
-/* --- Adaptación móvil --- */
 @media (max-width: 500px) {
   .img-ajustada {
     max-width: 50%;
@@ -239,12 +236,11 @@
   }
 }
 main {
-  background: white;
+  background: rgb(250, 230, 230);
 }
-/* 📱 Ajustes para pantallas medianas (tablets) */
 @media (max-width: 1024px) {
   .slider {
-    height: 300px; /* reduce la altura del slider */
+    height: 300px;
   }
 
   .slide img {
@@ -253,7 +249,7 @@ main {
   }
 
   .slide h2 {
-    font-size: 20px; /* texto un poco más pequeño */
+    font-size: 20px;
   }
 
   .prev,
