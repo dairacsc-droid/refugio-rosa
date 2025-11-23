@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../pages/Perfil.css";
 import { db } from "../firebase";
 import { doc, updateDoc } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
 // Importa tus imágenes de avatar
 import flor from "../assets/perfiles/flor.png";
@@ -48,8 +49,23 @@ function Perfil({ usuarioData }) {
     };
     lector.readAsDataURL(archivo);
   };
+  const guardarAvatar = async () => {
+    const auth = getAuth();
+    const user = auth.currentUser;
 
-  if (!usuarioData) return null; // no mostrar nada hasta que haya usuario
+    if (!user) return;
+
+    try {
+      await updateDoc(doc(db, "users", user.uid), {
+        avatar: avatarUrl,
+      });
+      alert("Avatar guardado correctamente 💗");
+    } catch (error) {
+      console.error("Error guardando avatar:", error);
+    }
+  };
+
+  if (!usuarioData) return null;
 
   return (
     <section className="perfil-card">
@@ -90,18 +106,20 @@ function Perfil({ usuarioData }) {
         💗 Subir mi propia foto
         <input type="file" accept="image/*" onChange={manejarSubidaArchivo} />
       </label>
+      <button className="guardar-avatar" onClick={guardarAvatar}>
+        Guardar avatar
+      </button>
 
-      {/* Música favorita */}
-      <h3>🎵 Mis canciones favoritas</h3>
+      <p>🎵 Favoritos:</p>
       <div className="favoritos-musica">
         {playlistFavoritos.length > 0 ? (
-          playlistFavoritos.map((song, index) => (
-            <div key={index} className="song-item">
-              <p>{song.titulo}</p>
-            </div>
+          playlistFavoritos.map((s, i) => (
+            <p key={i}>
+              {s.title} - {s.artist}
+            </p>
           ))
         ) : (
-          <p className="sin-musica">Aún no tienes canciones guardadas 💗</p>
+          <p>No hay favoritos aún 💗</p>
         )}
       </div>
     </section>

@@ -44,6 +44,7 @@ function App() {
           path="/perfil"
           element={<Perfil usuarioData={usuarioRegistrado} />}
         />
+
         <Route
           path="/login"
           element={
