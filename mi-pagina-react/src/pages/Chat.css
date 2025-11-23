@@ -10,7 +10,7 @@
 }
 
 .chat-box {
-  background: #fffafc;
+  background: #facbd6;
   border-radius: 25px;
   box-shadow: 0 8px 25px rgba(231, 84, 128, 0.2);
   padding: 30px;
@@ -21,9 +21,9 @@
   gap: 20px;
 }
 
-/* Título */
 .chat-box h2 {
   color: #e75480;
+    font-family: "Pacifico", cursive;
   text-align: center;
   font-size: 1.8rem;
   margin-bottom: 5px;

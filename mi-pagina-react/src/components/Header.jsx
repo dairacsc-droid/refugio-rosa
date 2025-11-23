@@ -50,31 +50,51 @@ function Header() {
 
         <ul className="nav-links">
           <li onClick={cerrarMenu}>
-            <NavLink
-              to="/"
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
-              Inicio
-            </NavLink>
-          </li>
+  <NavLink
+    to="/"
+    className={({ isActive }) => (isActive ? "active" : "")}
+  >
+    Inicio
+  </NavLink>
+</li>
 
-          <li onClick={cerrarMenu}>
-            <Link to="/chat">Chat</Link>
-          </li>
+<li onClick={cerrarMenu}>
+  <NavLink
+    to="/chat"
+    className={({ isActive }) => (isActive ? "active" : "")}
+  >
+    Chat
+  </NavLink>
+</li>
 
-          <li onClick={cerrarMenu}>
-            <Link to="/autocuidado">Autocuidado</Link>
-          </li>
+<li onClick={cerrarMenu}>
+  <NavLink
+    to="/autocuidado"
+    className={({ isActive }) => (isActive ? "active" : "")}
+  >
+    Autocuidado
+  </NavLink>
+</li>
 
-          <li onClick={cerrarMenu}>
-            <Link to="/playlist">Playlist</Link>
-          </li>
+<li onClick={cerrarMenu}>
+  <NavLink
+    to="/playlist"
+    className={({ isActive }) => (isActive ? "active" : "")}
+  >
+    Playlist
+  </NavLink>
+</li>
 
-          {usuario && (
-            <li onClick={cerrarMenu}>
-              <Link to="/perfil">Perfil</Link>
-            </li>
-          )}
+{usuario && (
+  <li onClick={cerrarMenu}>
+    <NavLink
+      to="/perfil"
+      className={({ isActive }) => (isActive ? "active" : "")}
+    >
+      Perfil
+    </NavLink>
+  </li>
+)}
 
           {usuario ? (
             <>

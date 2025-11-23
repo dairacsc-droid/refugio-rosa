@@ -50,7 +50,7 @@ function Login({onLogin, cambiarVista}) {
  
 
     return  (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-100 via-rose-100 to-white p-6">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-00 via-rose-100 to-white p-6">
       <div className="bg-white/70 backdrop-blur-sm shadow-xl rounded-2xl p-8 w-full max-w-md border border-pink-200 space-y-4">
         <h1 className="text-3xl font-bold text-pink-600 text-center mb-6">Iniciar Sesión</h1>
 

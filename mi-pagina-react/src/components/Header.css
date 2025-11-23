@@ -15,14 +15,13 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background-color: #f9c5d1;
+  background-color: #fabecc;
   position: sticky;
   top: 0;
   left: 0;
   z-index: 100;
 }
 
-/* Logo */
 .logo h1 {
   font-family: "Pacifico", cursive;
   color: #fff;
@@ -43,8 +42,8 @@ nav {
 }
 
 .nav-links li a {
-  text-decoration: none;
-  color: #fff;
+  color: #ffffff;
+/*text-shadow: 0px 0px 5px #e25a87;*/
   font-weight: 600;
   transition: color 0.3s;
 }
@@ -52,6 +51,7 @@ nav {
 .nav-links a.active,
 .nav-links li a:hover {
   color: #e25a87;
+  text-shadow: 0px 0px 50px #ff0055;
 }
 
 /* Menú hamburguesa */
@@ -82,7 +82,7 @@ nav {
     padding: 15px;
     gap: 15px;
     border-radius: 10px 0 0 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 5px 10px 6px rgba(0, 0, 0, 0.15);
     display: none;
   }
   #menu-toggle:checked + .hamburger + .nav-links {

@@ -60,8 +60,8 @@ function Autocuidado() {
   return (
     <section className="autocuidado">
       <div >
-        <h2 className=" m-6 text-5xl font-bold tips">
-          <span>Tips para ti</span>
+        <h2 className=" m-6 text-4xl ips titulo">
+          <span>♔Tips para ti♔</span>
         </h2>
 
         <div className="row" id="tarjetas-container">

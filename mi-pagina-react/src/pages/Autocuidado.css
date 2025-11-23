@@ -1,31 +1,52 @@
 .autocuidado {
   padding-bottom: 30px;
+  background: rgb(250, 230, 230);
   font-family: "LostaMasta-Light";
   text-align: center;
 }
 
-.tips span {
-  color: #e58fac;
+.titulo {
+  font-family: "Pacifico", cursive;
+  color: #e25a87;
   text-align: center;
-  display: block;
-  width: 100%;
+  
 }
 
 #tarjetas-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  border-radius: 10px;
-  color: #a34a67;
-  padding: 15px;
-}
-.card-title {
-  font-size: 25px;
-}
-#tarjetas-container img {
-  display: block;
+  max-width: 2000px;
   margin: 0 auto;
+  padding: 25px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Cada tarjeta */
+.card {
+  background: #facbd6;
+  border-radius: 20px;
+  padding: 25px 18px;
+  width: 350px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(31, 30, 30, 0.226);
+}
+
+.card img {
   width: 100%;
+  padding-bottom: 6px;
   border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Título de la tarjeta */
+.card-title {
+  font-size: 22px;
+  font-family: "Pacifico", cursive;
+  color: #e75480;
+  margin-bottom: 10px;
 }

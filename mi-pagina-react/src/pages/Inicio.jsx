@@ -105,8 +105,8 @@ function Inicio() {
             <span>{"Un refugio digital hecho por y para chicas "}</span>
           </h3>
           <div className="cards">
-            <div className="card">
-              <h3>🌸Visión</h3>
+            <div className="ision">
+              <h3>❀Visión❀</h3>
               <p>
                 Queremos construir un espacio digital donde cada chica pueda
                 sentirse segura, escuchada y acompañada. Soñamos con una
@@ -116,8 +116,8 @@ function Inicio() {
                 sin miedo a ser quienes somos.
               </p>
             </div>
-            <div className="card">
-              <h3>💡Misión</h3>
+            <div className="ision">
+              <h3>☼Misión☼</h3>
               <p>
                 Nuestra misión es ofrecer un lugar cercano y accesible, pensado
                 para adolescentes y jóvenes que buscan un refugio en medio del
