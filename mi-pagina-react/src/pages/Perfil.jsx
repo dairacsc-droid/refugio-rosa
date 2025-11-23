@@ -3,7 +3,6 @@ import "../pages/Perfil.css";
 import { db } from "../firebase";
 import { doc, updateDoc } from "firebase/firestore";
 
-// Importa tus imágenes de avatar
 import flor from "../assets/perfiles/flor.png";
 import gatito from "../assets/perfiles/gatito.png";
 import hojita from "../assets/perfiles/hojita.png";
@@ -13,10 +12,8 @@ function Perfil({ usuarioData }) {
   const [avatarUrl, setAvatarUrl] = useState("");
   const [playlistFavoritos, setPlaylistFavoritos] = useState([]);
 
-  // Avatares disponibles
   const avatares = [flor, gatito, hojita, luna];
 
-  // Cargar avatar y playlist al iniciar
   useEffect(() => {
     if (usuarioData) {
       setAvatarUrl(usuarioData.avatar || flor); // si no tiene avatar, usar flor
@@ -24,7 +21,6 @@ function Perfil({ usuarioData }) {
     }
   }, [usuarioData]);
 
-  // Cambiar avatar seleccionado
   const manejarSeleccionAvatar = async (url) => {
     setAvatarUrl(url);
     if (usuarioData?.uid) {
@@ -49,11 +45,11 @@ function Perfil({ usuarioData }) {
     lector.readAsDataURL(archivo);
   };
 
-  if (!usuarioData) return null; // no mostrar nada hasta que haya usuario
+  if (!usuarioData) return null;
 
   return (
     <section className="perfil-card">
-      <h2>💗 Tu Perfil</h2>
+      <h2 className="encabezado">❁Tu Perfil❁</h2>
 
       <div className="perfil-avatar">
         <img src={avatarUrl} alt="Avatar" />
@@ -87,12 +83,12 @@ function Perfil({ usuarioData }) {
 
       {/* Subir foto personalizada */}
       <label className="upload-btn">
-        💗 Subir mi propia foto
+        ▲ Subir mi propia foto ▲
         <input type="file" accept="image/*" onChange={manejarSubidaArchivo} />
       </label>
 
       {/* Música favorita */}
-      <h3>🎵 Mis canciones favoritas</h3>
+      <h3>♫ Mis canciones favoritas ♫</h3>
       <div className="favoritos-musica">
         {playlistFavoritos.length > 0 ? (
           playlistFavoritos.map((song, index) => (
@@ -101,7 +97,7 @@ function Perfil({ usuarioData }) {
             </div>
           ))
         ) : (
-          <p className="sin-musica">Aún no tienes canciones guardadas 💗</p>
+          <p className="sin-musica">Aún no tienes canciones guardadas</p>
         )}
       </div>
     </section>

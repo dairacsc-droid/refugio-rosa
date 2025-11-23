@@ -1,21 +1,21 @@
 .autocuidado {
   padding-bottom: 30px;
   background: rgb(250, 230, 230);
-  font-family: "LostaMasta-Light";
   text-align: center;
 }
 
 .titulo {
   font-family: "Pacifico", cursive;
-  color: #e25a87;
+  color: #db2777;
   text-align: center;
-  
+  padding-bottom: 0px;
 }
 
 #tarjetas-container {
   max-width: 2000px;
   margin: 0 auto;
   padding: 25px;
+  padding-top: 8px;
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -24,10 +24,13 @@
 
 /* Cada tarjeta */
 .card {
-  background: #facbd6;
+  /* background: #ffdce4; */
   border-radius: 20px;
+  border-width: 1px;
+  border-color: #da5f96;
   padding: 25px 18px;
   width: 350px;
+  color: #353535;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -47,6 +50,6 @@
 .card-title {
   font-size: 22px;
   font-family: "Pacifico", cursive;
-  color: #e75480;
+  color: #db2777;
   margin-bottom: 10px;
 }

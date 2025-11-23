@@ -1,6 +1,5 @@
 .chat-container {
-  background: rgb(252, 240, 240);
-
+  background: rgb(250, 230, 230);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -10,8 +9,10 @@
 }
 
 .chat-box {
-  background: #facbd6;
+  /* background: #ffd9e2;  */
   border-radius: 25px;
+  border-width: 1px;
+  border-color: #f188b7;
   box-shadow: 0 8px 25px rgba(231, 84, 128, 0.2);
   padding: 30px;
   max-width: 700px;
@@ -22,7 +23,7 @@
 }
 
 .chat-box h2 {
-  color: #e75480;
+  color: #db2777;
     font-family: "Pacifico", cursive;
   text-align: center;
   font-size: 1.8rem;
@@ -31,7 +32,7 @@
 
 .chat-descripcion {
   text-align: center;
-  color: #777;
+  color: #353535;
   font-size: 0.95rem;
   margin-bottom: 10px;
 }
@@ -61,7 +62,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 0.85rem;
-  color: #c94f6d;
+  color: #db2777;
   margin-bottom: 4px;
 }
 

@@ -32,7 +32,7 @@
 }
 
 .slide h2 {
-  color: #e25a87;
+  color: #db2777;
   font-family: "Pacifico", cursive;
   font-size: 24px;
 }
@@ -72,19 +72,20 @@
 }
 
 .services h3 {
-  color: #e25a87;
+  color: #db2777;
   font-family: "Pacifico", cursive;
   font-size: 38px;
   margin-bottom: 40px;
 }
 .services .card h3 {
-  color: #e25a87;
+  color: #db2777;
   font-family: "Pacifico", cursive;
   font-size: 28px;
   margin: 10px;
 }
 .services span {
   font-family: "Open Sans", sans-serif;
+  color: #353535;
   font-weight: 400;
   font-size: 20px;
 }
@@ -167,7 +168,7 @@
 .objetivos-container {
   text-align: center;
   font-size: 32px;
-  color: #e25a87;
+  color: #db2777;
   margin-bottom: 30px;
 }
 
@@ -194,7 +195,7 @@
 }
 
 .caracteristica h6 {
-  color: #d4498a;
+  color: #db2777;
   font-size: 1.1rem;
   margin-bottom: 8px;
 }

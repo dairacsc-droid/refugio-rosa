@@ -171,11 +171,12 @@ const Playlist = () => {
       </div>
 
       <div className="add-form">
+        <h6>▼ Añade la canción que desees ▼</h6>
         <input ref={titleRef} placeholder="Título" />
         <input ref={artistRef} placeholder="Artista" />
         <input ref={srcRef} placeholder="URL del MP3" />
         <button className="add-btn" onClick={addTrack}>
-          ➕ Añadir
+          ✚ Añadir
         </button>
       </div>
 
