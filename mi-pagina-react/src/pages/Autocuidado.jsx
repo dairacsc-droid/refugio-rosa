@@ -61,7 +61,7 @@ function Autocuidado() {
     <section className="autocuidado">
       <div >
         <h2 className=" m-6 text-4xl ips titulo">
-          <span>♔Tips para ti♔</span>
+          <>♔Tips para ti♔</>
         </h2>
 
         <div className="row" id="tarjetas-container">

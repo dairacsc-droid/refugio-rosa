@@ -7,6 +7,21 @@
   --soft: rgba(33, 48, 64, 0.06);
 }
 
+h3 {
+  color: #db2777;
+  font-family: "Pacifico", cursive;
+  font-size: 32px;
+  margin: 20px;
+  }
+
+.subt {
+  font-family: "Open Sans", sans-serif;
+  color: #353535;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+}
+
 body {
   margin: 0;
   font-family: "Poppins", system-ui, Segoe UI, Roboto, Arial;
@@ -18,10 +33,10 @@ body {
 
 .player-wrap {
   margin: 35px;
-  /* background: rgb(247, 227, 233); */
+  background: rgb(255, 255, 255);
   border-radius: 25px;
   border-width: 1px;
-  border-color: #f188b7;
+  border-color: #da5f96;
   box-shadow: 0 8px 25px rgba(231, 84, 128, 0.2);
   padding: 20px;
 }
@@ -184,6 +199,7 @@ body {
   background: var(--card);
   padding: 12px;
   border-radius: 14px;
+  background-color: #ffe3ee;
   box-shadow: 0 6px 18px rgba(18, 40, 60, 0.03);
   cursor: pointer;
   border: 2px solid transparent;
@@ -192,6 +208,8 @@ body {
 
 .track-item.active {
   border-color: #f06292;
+  border-width: 1px;
+  background-color: rgb(253, 229, 241);
   box-shadow: 0 8px 22px rgba(18, 40, 60, 0.06);
 }
 

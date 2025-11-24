@@ -85,8 +85,13 @@ const Playlist = () => {
       setIsPlaying(false);
     }
   };
-
+ 
   return (
+    <>
+          <h3 className="titulo"> ♫ Tu Refugio musical ♫ <br />
+          </h3>            
+          <div className="subt">{"Canciones para sostenerte, reconectar y respirar bonito"}</div>
+
     <div className="player-wrap">
       <section className="player-body">
         {/* Disco */}
@@ -181,6 +186,7 @@ const Playlist = () => {
 
       <audio ref={audioRef} src={currentTrack?.src} onEnded={handleEnd} />
     </div>
+    </>
   );
 };
 

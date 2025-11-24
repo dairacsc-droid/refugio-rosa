@@ -93,12 +93,6 @@ function Header() {
               >
                 Pendientes
               </NavLink>
-              <NavLink
-                to="/perfil"
-                className={({ isActive }) => (isActive ? "active" : "")}
-              >
-                Perfil
-              </NavLink>
             </li>
           )}
 

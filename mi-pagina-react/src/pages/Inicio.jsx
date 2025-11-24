@@ -99,7 +99,7 @@ function Inicio() {
           </div>
         </section>
 
-        <section className="services">
+        <section className="services"> 
           <h3>
             Visión & Misión <br />
             <span>{"Un refugio digital hecho por y para chicas "}</span>

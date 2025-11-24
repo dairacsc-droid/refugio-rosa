@@ -8,7 +8,6 @@ import Inicio from "./pages/Inicio";
 import Chat from "./pages/Chat";
 import Autocuidado from "./pages/Autocuidado";
 import Playlist from "./pages/Playlist";
-import Perfil from "./pages/Perfil";
 import RegistrarUsuario from "./components/RegistrarUsuario";
 import Login from "./components/Login";
 import Pendientes from "./pages/Pendientes";
@@ -19,22 +18,6 @@ function App() {
 
   const auth = getAuth(); // <<<< DEFINIMOS AUTH
   const navigate = useNavigate(); // <<<< DEFINIMOS NAVIGATE
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setUsuarioRegistrado(user);
-
-      if (user && !redirigido) {
-        navigate("/perfil");
-        setRedirigido(true);
-      }
-    });
-
-    return () => unsubscribe();
-  }, [auth, navigate, redirigido]);
-  const actualizarUsuario = (nuevoUsuario) => {
-    setUsuarioRegistrado(nuevoUsuario);
-  };
 
   return (
     <>
@@ -53,16 +36,7 @@ function App() {
           }
         />
         <Route path="/playlist" element={<Playlist />} />
-        <Route
-          path="/perfil"
-          element={
-            <Perfil
-              usuarioData={usuarioRegistrado}
-              actualizarUsuario={setUsuarioRegistrado} // <--- esto permite actualizar
-            />
-          }
-        />
-
+   
         <Route
           path="/login"
           element={

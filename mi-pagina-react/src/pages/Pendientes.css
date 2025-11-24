@@ -1,0 +1,115 @@
+/* Fondo principal */
+.fondo-pendientes {
+  background: rgb(250, 230, 230); /* rosado suave */
+}
+
+/* Títulos estilo Pacifico */
+.titulo-principal {
+  font-family: "Pacifico", cursive;
+  color: #db2777;
+  font-size: 28px;
+}
+
+/* Contenedor del formulario */
+.contenedor-formulario {
+  background: #ffffff;
+  border: 1px solid #da5f96;
+  border-radius: 20px;
+}
+
+/* Contenedor de lista */
+.contenedor-lista {
+  background: #ffffff;
+  border: 1px solid #da5f96;
+  border-radius: 20px;
+}
+
+/* Inputs y textarea */
+.input-estilos {
+  border: 1px solid #da5f96;
+  background: #ffe3ee;
+  color: #353535;
+}
+
+.input-estilos:focus {
+  outline: none;
+  box-shadow: 0 0 5px #db2777;
+}
+
+/* Botón agregar */
+.btn-agregar {
+  background: #db2777;
+  color: white;
+  font-weight: bold;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.btn-agregar:hover {
+  background: #b91c68;
+}
+
+/* Item de la lista */
+.tarea-item {
+  background: #ffe3ee;
+  border: 1px solid #da5f96;
+  color: #353535;
+  transition: 0.3s;
+}
+
+.tarea-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos de texto */
+.tarea-materia {
+  font-weight: bold;
+  color: #db2777;
+  font-size: 20px;
+}
+
+.tarea-descripcion {
+  margin-top: 5px;
+  color: #3b3b3b;
+  font-size: 16px;
+}
+
+/* Botones editar, guardar, eliminar */
+.btn-editar {
+  background: #db2777;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn-editar:hover {
+  background: #b91c68;
+}
+
+.btn-eliminar {
+  background: #ef4444;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn-eliminar:hover {
+  background: #dc2626;
+}
+
+.btn-guardar {
+  background: #ee307f;
+  color: white;
+}
+
+.btn-guardar:hover {
+  background: #059669;
+}
+
+.btn-cancelar {
+  background: #6b7280;
+  color: white;
+}
+
+.btn-cancelar:hover {
+  background: #4b5563;
+}

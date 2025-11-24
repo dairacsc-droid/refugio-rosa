@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import { db } from "../firebase";
 import {
   collection,
@@ -9,6 +8,8 @@ import {
   updateDoc,
   deleteDoc,
 } from "firebase/firestore";
+import "../pages/Pendientes.css";
+
 
 function Pendientes() {
   const [Materia, setMateria] = useState("");
@@ -64,102 +65,119 @@ function Pendientes() {
     }
   };
 
-  return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-6">
-      {/* --- Formulario de agregar usuario --- */}
-      <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md border border-purple-200 mb-8">
-        <h1 className="text-2xl font-semibold text-purple-700 text-center mb-6">
-          Añadir Pendiente
-        </h1>
+return (
+  <>
+  <h3 className="titulo"> ⚜ Mi Agenda Personal ⚜<br />
+          </h3>            
+          <div className="subt">{"Guarda aquí los pendientes que no quieres olvidar."}</div>
+  <div className="min-h-screen w-full flex items-center justify-center py-10 px-4 fondo-pendientes">
+    <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      {/* --- Formulario --- */}
+      <div className="contenedor-formulario p-8 rounded-2xl shadow-lg">
+        <h1 className="titulo-principal text-center mb-6">Añadir Pendiente</h1>
 
         <input
           type="text"
           placeholder="Materia"
           value={Materia}
           onChange={(e) => setMateria(e.target.value)}
-          className="w-full p-3 border border-purple-300 rounded-xl mb-3 focus:ring-2 focus:ring-purple-500 focus:outline-none"
+          className="input-estilos w-full p-3 rounded-xl mb-3"
         />
+
         <textarea
-          placeholder="Describe tu pendientes"
+          placeholder="Describe tu pendiente"
           value={Descripcion}
           onChange={(e) => setDescripcion(e.target.value)}
-          className="w-full p-3 border border-purple-300 rounded-xl mb-3 h-20 resize-none focus:ring-2 focus:ring-purple-500 focus:outline-none"
+          className="input-estilos w-full p-3 rounded-xl mb-3 h-24 resize-none"
         />
 
         <button
           onClick={AgregarUsuarios}
-          className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-xl shadow-md transition duration-200"
+          className="btn-agregar w-full py-3 rounded-xl"
         >
           Agregar pendiente
         </button>
       </div>
 
-      {/* --- Lista de tareas (editar y eliminar) --- */}
-      <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md border border-purple-200">
-        <h2 className="text-2xl font-semibold text-purple-700 text-center mb-6">
-          Lista de Tareas
-        </h2>
-        <ul className="list-disc marker:text-sky-400">
+      {/* --- Lista --- */}
+      <div className="contenedor-lista p-8 rounded-2xl shadow-lg">
+        <h2 className="titulo-principal text-center mb-6">Lista de Tareas</h2>
+
+        <ul>
           {tarea.map((t) => (
-            <li key={t.id} className="mb-3">
+            <li key={t.id} className="tarea-item p-4 rounded-xl mb-6">
+
+              {/* MODO EDICIÓN */}
               {editandoID === t.id ? (
                 <>
                   <input
                     type="text"
-                    value={MateriaEditado}
+                    value={materiaEditado}
                     onChange={(e) => setMateriaEditado(e.target.value)}
-                    className="border border-purple-300 rounded-xl p-2 mr-2"
+                    className="input-estilos w-full p-2 rounded-xl mb-2"
                   />
-                  <input
-                    type="text"
+
+                  <textarea
                     value={descripcionEditada}
                     onChange={(e) => setDescripcionEditada(e.target.value)}
-                    className="border border-purple-300 rounded-xl p-2 mr-2"
+                    className="input-estilos w-full p-2 rounded-xl mb-2 h-20 resize-none"
                   />
-                  <button
-                    onClick={() => editarTarea(t.id)}
-                    className="bg-purple-400 hover:bg-purple-600 text-white font-semibold py-1 px-3 rounded-xl mr-2"
-                  >
-                    Guardar
-                  </button>
-                  <button
-                    onClick={() => setEditandoID(null)}
-                    className="bg-gray-400 hover:bg-gray-600 text-white font-semibold py-1 px-3 rounded-xl"
-                  >
-                    Cancelar
-                  </button>
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={() => editarTarea(t.id)}
+                      className="btn-guardar py-2 px-4 rounded-xl"
+                    >
+                      Guardar
+                    </button>
+
+                    <button
+                      onClick={() => setEditandoID(null)}
+                      className="btn-cancelar py-2 px-4 rounded-xl"
+                    >
+                      Cancelar
+                    </button>
+                  </div>
                 </>
               ) : (
                 <>
-                  <p>
-                    <strong>{t.materia}</strong> - {t.descripcion}
-                  </p>
-                  <div className="flex space-x-2 mt-1">
+                  <p className="tarea-materia">{t.materia}</p>
+                  <p className="tarea-descripcion">{t.descripcion}</p>
+
+                  <div className="flex gap-3 mt-2">
                     <button
                       onClick={() => {
                         setEditandoID(t.id);
                         setMateriaEditado(t.materia);
                         setDescripcionEditada(t.descripcion);
                       }}
-                      className="bg-purple-400 hover:bg-purple-600 text-white font-semibold py-1 px-3 rounded-xl"
+                      className="btn-editar py-1 px-3 rounded-xl"
                     >
                       Editar
                     </button>
+
                     <button
                       onClick={() => eliminarTarea(t.id)}
-                      className="bg-red-500 hover:bg-red-600 text-white font-semibold py-1 px-3 rounded-xl"
+                      className="btn-eliminar py-1 px-3 rounded-xl"
                     >
                       Eliminar
                     </button>
                   </div>
                 </>
               )}
+
             </li>
           ))}
         </ul>
       </div>
+
     </div>
-  );
+  </div>
+  </>
+);
+
+
 }
 
 export default Pendientes;
