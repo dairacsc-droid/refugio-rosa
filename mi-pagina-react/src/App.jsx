@@ -11,6 +11,7 @@ import Playlist from "./pages/Playlist";
 import Perfil from "./pages/Perfil";
 import RegistrarUsuario from "./components/RegistrarUsuario";
 import Login from "./components/Login";
+import Pendientes from "./pages/Pendientes";
 
 function App() {
   const [usuarioRegistrado, setUsuarioRegistrado] = useState(null);
@@ -31,6 +32,9 @@ function App() {
 
     return () => unsubscribe();
   }, [auth, navigate, redirigido]);
+  const actualizarUsuario = (nuevoUsuario) => {
+    setUsuarioRegistrado(nuevoUsuario);
+  };
 
   return (
     <>
@@ -39,10 +43,24 @@ function App() {
         <Route path="/" element={<Inicio />} />
         <Route path="/chat" element={<Chat usuario={usuarioRegistrado} />} />
         <Route path="/autocuidado" element={<Autocuidado />} />
+        <Route
+          path="/pendiente"
+          element={
+            <Pendientes
+              usuarioData={usuarioRegistrado}
+              actualizarUsuario={setUsuarioRegistrado} // <--- esto permite actualizar
+            />
+          }
+        />
         <Route path="/playlist" element={<Playlist />} />
         <Route
           path="/perfil"
-          element={<Perfil usuarioData={usuarioRegistrado} />}
+          element={
+            <Perfil
+              usuarioData={usuarioRegistrado}
+              actualizarUsuario={setUsuarioRegistrado} // <--- esto permite actualizar
+            />
+          }
         />
 
         <Route

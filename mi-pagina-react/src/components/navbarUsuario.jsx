@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import "./Header.css";
 
-function navbarUsuario() {
+function NavbarUsuario() {
   const auth = getAuth();
   const navigate = useNavigate();
 
@@ -97,4 +97,4 @@ function navbarUsuario() {
   );
 }
 
-export default navbarUsuario;
+export default NavbarUsuario;

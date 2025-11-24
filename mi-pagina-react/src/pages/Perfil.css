@@ -1,13 +1,22 @@
 .perfil-card {
   width: 90%;
   max-width: 450px;
+  border-width: 1px;
+  border-color: #da5f96;
   margin: 30px auto;
   padding: 20px;
-  background: #fff0f7;
+  /* background: #fff0f7; */
   border-radius: 18px;
   text-align: center;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
+
+.encabezado {
+  font-family: "Pacifico", cursive;
+  color: #db2777;
+  text-align: center;
+}
+
 .perfil-avatar {
   display: flex;
   justify-content: center;
@@ -64,7 +73,7 @@
 }
 
 .favoritos-musica {
-  background: #ffe6ef;
+  background: #fdcfe0;
   padding: 10px;
   border-radius: 12px;
 }
@@ -78,4 +87,39 @@
 
 .sin-musica {
   color: #777;
+}
+.editar-btn,
+.cancelar-btn {
+  padding: 8px 15px;
+  margin: 5px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.editar-btn {
+  background-color: #ff8cb7;
+  color: white;
+}
+
+.editar-btn:hover {
+  background-color: #ff4f94;
+}
+
+.cancelar-btn {
+  background-color: #ccc;
+  color: #333;
+}
+
+.cancelar-btn:hover {
+  background-color: #999;
+}
+
+input {
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 60%;
 }
