@@ -1,18 +1,26 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
 
-function RegistrarUsuario({ OnRegister, cambiarVista }) {
+function RegistrarUsuario({ OnRegister }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [apodo, setApodo] = useState("");
 
+  const navigate = useNavigate();
+
   const registrar = async () => {
     const auth = getAuth();
+
+    if (password.length < 6) {
+      alert("La contraseña debe tener al menos 6 caracteres");
+      return;
+    }
 
     try {
       const userCredential = await createUserWithEmailAndPassword(
@@ -33,8 +41,9 @@ function RegistrarUsuario({ OnRegister, cambiarVista }) {
       console.log("DisplayName guardado:", user.displayName);
 
       OnRegister(auth.currentUser);
+      navigate("/"); 
     } catch (error) {
-      console.log("Error al registrar el usuario");
+      console.log("Error al registrar");
       console.log(error);
     }
   };
@@ -47,7 +56,7 @@ function RegistrarUsuario({ OnRegister, cambiarVista }) {
         </h1>
 
         <input
-          className="w-full p-3 border border-pink-300 rounded-xl focus:ring-2 focus:ring-pink-400 focus:outline-none"
+          className="w-full p-3 border border-pink-300 rounded-xl"
           type="text"
           placeholder="Escribe tu nombre completo"
           value={name}
@@ -55,7 +64,7 @@ function RegistrarUsuario({ OnRegister, cambiarVista }) {
         />
 
         <input
-          className="w-full p-3 border border-pink-300 rounded-xl focus:ring-2 focus:ring-pink-400 focus:outline-none"
+          className="w-full p-3 border border-pink-300 rounded-xl"
           type="text"
           placeholder="Escribe como quieres que te llamemos"
           value={apodo}
@@ -63,7 +72,7 @@ function RegistrarUsuario({ OnRegister, cambiarVista }) {
         />
 
         <input
-          className="w-full p-3 border border-pink-300 rounded-xl focus:ring-2 focus:ring-pink-400 focus:outline-none"
+          className="w-full p-3 border border-pink-300 rounded-xl"
           type="email"
           placeholder="Escribe tu Email"
           value={email}
@@ -71,7 +80,7 @@ function RegistrarUsuario({ OnRegister, cambiarVista }) {
         />
 
         <input
-          className="w-full p-3 border border-pink-300 rounded-xl focus:ring-2 focus:ring-pink-400 focus:outline-none"
+          className="w-full p-3 border border-pink-300 rounded-xl"
           type="password"
           placeholder="Escribe tu contraseña"
           value={password}
@@ -79,7 +88,7 @@ function RegistrarUsuario({ OnRegister, cambiarVista }) {
         />
 
         <button
-          className="w-full mt-4 bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 rounded-xl shadow-md transition duration-200"
+          className="w-full mt-4 bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 rounded-xl"
           onClick={registrar}
         >
           Registrarse
@@ -87,7 +96,10 @@ function RegistrarUsuario({ OnRegister, cambiarVista }) {
 
         <div className="text-center mt-4">
           <p className="text-gray-600 text-sm">¿Ya tienes una cuenta?</p>
-          <button className="text-pink-500 hover:underline font-semibold mt-1">
+          <button
+            className="text-pink-500 hover:underline font-semibold mt-1"
+            onClick={() => navigate("/login")}
+          >
             Iniciar sesión
           </button>
         </div>

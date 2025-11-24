@@ -14,10 +14,21 @@ import Pendientes from "./pages/Pendientes";
 
 function App() {
   const [usuarioRegistrado, setUsuarioRegistrado] = useState(null);
-  const [redirigido, setRedirigido] = useState(false);
+  const navigate = useNavigate();
+  const auth = getAuth();
 
-  const auth = getAuth(); // <<<< DEFINIMOS AUTH
-  const navigate = useNavigate(); // <<<< DEFINIMOS NAVIGATE
+  // ⬅ Redirección automática si ya hay usuario logueado
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUsuarioRegistrado(user);
+      } else {
+        setUsuarioRegistrado(null);
+      }
+    });
+
+    return () => unsubscribe();
+  }, [auth]);
 
   return (
     <>
@@ -31,23 +42,34 @@ function App() {
           element={
             <Pendientes
               usuarioData={usuarioRegistrado}
-              actualizarUsuario={setUsuarioRegistrado} // <--- esto permite actualizar
+              actualizarUsuario={setUsuarioRegistrado}
             />
           }
         />
         <Route path="/playlist" element={<Playlist />} />
-   
+
+        {/* Login */}
         <Route
           path="/login"
           element={
-            <Login OnLogin={(userData) => setUsuarioRegistrado(userData)} />
+            <Login
+              OnLogin={(userData) => {
+                setUsuarioRegistrado(userData);
+                navigate("/"); // Redirige automáticamente después de login
+              }}
+            />
           }
         />
+
+        {/* Registro */}
         <Route
           path="/registrarse"
           element={
             <RegistrarUsuario
-              OnRegister={(userData) => setUsuarioRegistrado(userData)}
+              OnRegister={(userData) => {
+                setUsuarioRegistrado(userData);
+                navigate("/"); // Redirige automáticamente después de registro
+              }}
             />
           }
         />

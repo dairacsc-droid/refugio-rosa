@@ -33,6 +33,7 @@ function Header() {
   };
 
   const nombreMostrado = usuario?.displayName || "Usuario";
+ 
 
   return (
     <header>
